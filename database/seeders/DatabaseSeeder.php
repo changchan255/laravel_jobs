@@ -4,6 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Attribute;
+use Illuminate\Support\Str;
+use Illuminate\Support\Carbon;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +16,51 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $attributes = [
+            Attribute::TYPE_EXPERIENCE => [
+                'Chưa có kinh nghiệm',
+                'Dưới 1 năm',
+                '1 năm',
+                '2 năm',
+                '3 năm',
+                '4 năm',
+                '5 năm',
+                'Trên 5 năm',
+                
+            ],
+            Attribute::TYPE_RANK => [
+                'Mới tốt nghiệp / thực tập',
+                'Nhân viên',
+                'Trưởng nhóm',
+                'Trưởng phòng',
+                'Phó giám đốc',
+                'Giám đốc',
+            ],
+            Attribute::TYPE_FORM_OF_WORK => [
+                'Toàn thời gian cố định',
+                'Bán thời gian cố định',
+                'Bán thời gian tạm thời',
+                'Thực tập',
+                'Theo hợp đồng tư vấn',
+            ]    
+        ];
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        foreach($attributes as $key => $attribute) {
+           foreach($attribute as $item) {
+                try {
+                    dump($item);
+                    Attribute::insert ([
+                        'a_name' => $item,
+                        'a_slug' => Str::slug($item),
+                        'a_type' => $key,
+                        'created_at' => Carbon::now()
+                    ]);
+                } catch (\Exception $exception) {
+
+                }
+           }
+            
+        }
+
     }
 }
