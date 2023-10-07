@@ -10,4 +10,5 @@ class Career extends Model
     use HasFactory;
     protected $guarded = [''];
     protected $table = 'careers';
+    const HOT = 1;
 }
