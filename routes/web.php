@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\JobController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +16,4 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('', [HomeController::class, 'index'])->name('get.home');
+Route::get('job/{slug}.html', [JobController::class, 'index'])->name('get.job');
