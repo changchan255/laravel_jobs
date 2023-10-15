@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +17,9 @@ use App\Http\Controllers\JobController;
 |
 */
 
+Route::group(['namespace' => 'Auth','prefix' => 'account'], function() {
+    Route::post('login', [LoginController::class, 'postLogin'])->name('post.login');
+    Route::post('register', [RegisterController::class, 'postRegister'])->name('post.register');
+});
 Route::get('', [HomeController::class, 'index'])->name('get.home');
 Route::get('job/{slug}.html', [JobController::class, 'index'])->name('get.job');

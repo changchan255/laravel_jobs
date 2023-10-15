@@ -352,3 +352,7 @@
 		</div>
 	</section>
 @stop
+
+@section('script')
+	<script src="{{ asset('js/home.js') }}"></script>
+@stop

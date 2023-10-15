@@ -1,0 +1,7 @@
+{
+  "resources/js/pages/home.js": {
+    "file": "home.js",
+    "isEntry": true,
+    "src": "resources/js/pages/home.js"
+  }
+}

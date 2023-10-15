@@ -6767,6 +6767,12 @@ aside .widget.border:first-child {
     color: #888888;
     padding: 30px 30px;
 }
+.text-error {
+    font-size: 13px;
+    color: red;
+    display: block;
+    text-align: left; 
+}
 .profile-form-edit > form button {
     float: right;
     background: #ffffff;
@@ -11581,7 +11587,10 @@ footer.ft .scrollup {
 .res-logo > a {
     float: left;
 }
-
+.red_w {
+    color: #FF4D43;
+    text-align: center;
+}
 
 
 

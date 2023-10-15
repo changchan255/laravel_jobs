@@ -7,6 +7,7 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="CreativeLayers">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/jobboard/css/bootstrap-grid.css') }}" />
@@ -211,5 +212,6 @@
 <script src="{{ asset('assets/jobboard/js/select-chosen.js') }}" type="text/javascript"></script>
 
 </body>
+@yield('script')
 </html>
 
