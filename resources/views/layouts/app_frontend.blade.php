@@ -8,7 +8,6 @@
 	<meta name="keywords" content="">
 	<meta name="author" content="CreativeLayers">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/jobboard/css/bootstrap-grid.css') }}" />
 	<link rel="stylesheet" href="{{asset('assets/jobboard/css/icons.css') }}">
@@ -19,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/jobboard/css/colors.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/jobboard/css/bootstrap.css') }}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-	
+
 </head>
 <body>
 
@@ -28,7 +27,7 @@
 </div>
 
 <div class="theme-layout" id="scrollup">
-	
+
 	<div class="responsive-header">
 		<div class="responsive-menubar">
 			<div class="res-logo"><a href="index.html" title=""><img src="{{asset('assets/jobboard/images/resource/logo.png') }}" alt="" /></a></div>
@@ -155,7 +154,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<header class="stick-top forsticky">
 		<div class="menu-sec">
 			<div class="container">
@@ -178,14 +177,14 @@
 							<a href="{{ route('get.job',['slug' => 'danh-sach-viec-lam']) }}" title="Việc làm">Việc làm</a>
 							<ul>
 								<li><a href="" title="">Việc làm theo địa điểm</a></li>
-								<li><a href="" title="">Việc làm nổi bật</a></li>	
+								<li><a href="" title="">Việc làm nổi bật</a></li>
 							</ul>
 						</li>
 						<li class="menu-item-has-children">
 							<a href="#" title="">Tư vấn</a>
 							<ul>
 								<li><a href="" title="">Tư vấn nghề nghiệp</a></li>
-								<li><a href="" title="">Tạo CV Online</a></li>	
+								<li><a href="" title="">Tạo CV Online</a></li>
 							</ul>
 						</li>
 					</ul>

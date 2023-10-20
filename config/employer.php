@@ -5,9 +5,9 @@
 return [
     'sidebar' => [
         [
-            'title' => 'Thông tin công ti',
+            'title' => 'Thông tin công ty',
             'icon' => 'la la-file-text',
-            'route' => ''
+            'route' => 'get_employer.company.index'
         ],
         [
             'title' => 'Danh sách job',

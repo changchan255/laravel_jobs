@@ -17,7 +17,7 @@ use App\Http\Controllers\Auth\RegisterController;
 |
 */
 
-Route::group(['namespace' => 'Auth','prefix' => 'account'], function() {
+Route::group(['namespace' => 'Auth', 'prefix' => 'account'], function () {
     Route::post('login', [LoginController::class, 'postLogin'])->name('post.login');
     Route::post('register', [RegisterController::class, 'postRegister'])->name('post.register');
 });

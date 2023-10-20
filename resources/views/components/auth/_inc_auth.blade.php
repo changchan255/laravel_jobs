@@ -2,7 +2,8 @@
 	<div class="account-popup">
 		<span class="close-popup"><i class="la la-close"></i></span>
 		<h3>Đăng nhập</h3>
-		<form action="{{ route('post.login')}}" method="POST" id="formLogin"> 
+		<form action="{{ route('post.login') }}" method="POST" id="formLogin">
+            @csrf
 			<div class="cfield">
 				<input type="email" name="email" required placeholder="Email" />
 				<i class="la la-user"></i>
@@ -28,22 +29,22 @@
 	<div class="account-popup">
 		<span class="close-popup"><i class="la la-close"></i></span>
 		<h3>Đăng ký</h3>
-		<form action="{{ route('post.register')}}" method="POST" id="formRegister">
-			@csrf
+		<form action="{{ route('post.register') }}" method="POST" id="formRegister">
+            @csrf
 			<div class="cfield">
-				<input type="text" required placeholder="Name" name="name" />
+				<input type="text" placeholder="Name" name="name" />
 				<i class="la la-user"></i>
 			</div>
 			<div class="cfield">
-				<input type="email" required placeholder="Email" name="email" />
+				<input type="email" placeholder="Email" name="email" />
 				<i class="la la-envelope-o"></i>
 			</div>
 			<div class="cfield">
-				<input type="password" required placeholder="********" name="password" />
+				<input type="password" placeholder="********" name="password" />
 				<i class="la la-key"></i>
 			</div>
 			<div class="cfield">
-				<input type="text" required placeholder="Phone Number" name="phone" />
+				<input type="text" placeholder="Phone Number" name="phone" />
 				<i class="la la-phone"></i>
 			</div>
 			<button type="submit" class="js-register">Đăng ký</button>

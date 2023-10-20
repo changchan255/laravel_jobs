@@ -25,7 +25,7 @@ class RequestRegister extends FormRequest
             'name'      => 'required',
             'email'     => 'required',
             'password'  => 'required',
-            'phone'     => 'required'
+            'phone'     => 'required',
         ];
     }
 
@@ -35,7 +35,7 @@ class RequestRegister extends FormRequest
             'name.required' => 'Dữ liệu không được để trống',
             'email.required' => 'Dữ liệu không được để trống',
             'password.required' => 'Dữ liệu không được để trống',
-            'phone.required' => 'Dữ liệu không được để trống'
+            'phone.required' => 'Dữ liệu không được để trống',
         ];
     }
 }

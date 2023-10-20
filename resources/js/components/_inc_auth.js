@@ -1,9 +1,10 @@
 var Auth = {
-    init : function () 
+    init : function ()
     {
         this.postLogin()
         this.postRegister()
         this.runToken()
+
     },
     runToken()
     {
@@ -13,11 +14,10 @@ var Auth = {
             }
         });
     },
-
     postRegister()
     {
         $(".js-register").click(function (event) {
-            event.preventDefault()
+            event.preventDefault();
             let $form = $("#formRegister");
             var formData = $form.serialize();
             $.ajax({
@@ -39,7 +39,7 @@ var Auth = {
             });
         })
     },
-    postLogin() 
+    postLogin()
     {
         $(".js-login").click(function (event) {
             event.preventDefault()

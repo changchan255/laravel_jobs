@@ -13,7 +13,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var Auth = {
-  init: function init() {}
+  init: function init() {
+    this.postLogin();
+    this.postRegister();
+    this.runToken();
+  },
+  runToken: function runToken() {
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+  },
+  postRegister: function postRegister() {
+    $(".js-register").click(function (event) {
+      event.preventDefault();
+      var $form = $("#formRegister");
+      var formData = $form.serialize();
+      $.ajax({
+        url: $form.attr('action'),
+        type: 'POST',
+        data: formData,
+        success: function success(data) {
+          console.log(data);
+        },
+        error: function error(response) {
+          if (response.status === 422) {
+            var errors = $.parseJSON(response.responseText);
+            console.log(errors);
+            $.each(response.responseJSON.errors, function (field_name, error) {
+              $(document).find('[name=' + field_name + ']').parent().after('<span class="text-error">' + error + '</span>');
+            });
+          }
+        }
+      });
+    });
+  },
+  postLogin: function postLogin() {
+    $(".js-login").click(function (event) {
+      event.preventDefault();
+      var $formLogin = $("#formLogin");
+      var formData = $formLogin.serialize();
+      $.ajax({
+        url: $formLogin.attr('action'),
+        type: 'POST',
+        data: formData,
+        success: function success(data) {
+          console.log(data);
+        },
+        error: function error(data) {
+          console.log(data);
+        }
+      });
+      console.log("login");
+    });
+  }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Auth);
 
@@ -82,14 +136,14 @@ var __webpack_exports__ = {};
   !*** ./resources/js/pages/home.js ***!
   \************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_inc_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/_inc_auth */ "./resources/js/components/_inc_auth.js");
+/* harmony import */ var C_Users_Admin_laravel_jobs_resources_js_components_inc_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./resources/js/components/_inc_auth */ "./resources/js/components/_inc_auth.js");
 
 var Home = {
   init: function init() {}
 };
 $(function () {
   Home.init();
-  _components_inc_auth__WEBPACK_IMPORTED_MODULE_0__["default"].init();
+  C_Users_Admin_laravel_jobs_resources_js_components_inc_auth__WEBPACK_IMPORTED_MODULE_0__["default"].init();
 });
 })();
 

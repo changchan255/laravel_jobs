@@ -18,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/jobboard/css/colors.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/jobboard/css/bootstrap.css') }}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-	
+
 </head>
 <body>
 
@@ -27,10 +27,10 @@
 </div>
 
 <div class="theme-layout" id="scrollup">
-	
+
 <div class="responsive-header">
     <div class="responsive-menubar">
-        <div class="res-logo"><a href="index.html" title=""><img src="images/resource/logo.png" alt=""></a></div>
+        <div class="res-logo"><a href="index.html" title=""><img src="{{asset('assets/jobboard/images/resource/logo.png') }}" alt=""></a></div>
         <div class="menu-resaction">
             <div class="res-openmenu">
                 <img src="images/icon.png" alt=""> Menu
@@ -159,11 +159,11 @@
     <div class="menu-sec">
         <div class="container">
             <div class="logo">
-                <a href="index.html" title=""><img src="images/resource/logo.png" alt=""></a>
+                <a href="index.html" title=""><img src="{{asset('assets/jobboard/images/resource/logo.png') }}" alt=""></a>
             </div>
             <!-- Logo -->
             <div class="btns-profiles-sec">
-                <span><img src="images/resource/profile.jpg" alt=""> Tera Planer <i class="la la-angle-down"></i></span>
+                <span><img src="{{asset('assets/jobboard/images/resource/profile.jpg') }}" alt=""> {{ Auth::guard('users')->user()->name }} <i class="la la-angle-down"></i></span>
                 <ul>
                     <li><a href="employer_profile.html" title=""><i class="la la-file-text"></i>Company Profile</a></li>
                     <li><a href="employer_manage_jobs.html" title=""><i class="la la-briefcase"></i>Manage Jobs</a></li>
