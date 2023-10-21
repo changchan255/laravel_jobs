@@ -12,8 +12,17 @@ class LoginController extends Controller
     {
         if($request->ajax())
         {
-            $data = $request->except('_token');
-            return response()->json($data);
+            $credentials = $request->only('email', 'password');
+
+            if (\Auth::guard('users')->attempt($credentials)) {
+                //Authentication passed...
+                return response()->json([
+                    'status' => 200
+                ]);
+            }
+            return response()->json([
+                'status' => 201
+            ]);
         }
     }
 }

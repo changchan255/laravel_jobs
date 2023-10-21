@@ -30,6 +30,7 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
+    '_token_id' => '121_121trungphu_ada-adadada-dadadaada',
 
     /*
     |--------------------------------------------------------------------------

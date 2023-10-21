@@ -18,7 +18,6 @@
     <div class="block no-padding">
         <div class="container">
             <div class="row no-gape">
-                @include
                 <aside class="col-lg-3 column border-right">
                     <div class="widget">
                         <div class="tree_widget-sec">

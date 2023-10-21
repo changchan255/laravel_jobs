@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Career;
 use Illuminate\Database\Seeder;
 use App\Models\Attribute;
 use Illuminate\Support\Str;
@@ -26,7 +27,7 @@ class DatabaseSeeder extends Seeder
                 '4 năm',
                 '5 năm',
                 'Trên 5 năm',
-                
+
             ],
             Attribute::TYPE_RANK => [
                 'Mới tốt nghiệp / thực tập',
@@ -42,7 +43,7 @@ class DatabaseSeeder extends Seeder
                 'Bán thời gian tạm thời',
                 'Thực tập',
                 'Theo hợp đồng tư vấn',
-            ]    
+            ]
         ];
 
         foreach($attributes as $key => $attribute) {
@@ -59,7 +60,31 @@ class DatabaseSeeder extends Seeder
 
                 }
            }
-            
+
+        }
+        $careers = [
+            'IT phần mềm',
+            'Bán hàng',
+            'Khách sạn - Nhà hàng',
+            'Phiên dịch - Ngoại ngữ',
+            'Hành chính - Văn phòng',
+            'Kỹ thuật',
+            'Kế toán - Kiểm toán',
+            'Marketing - PR',
+        ];
+
+        foreach ($careers as $item)
+        {
+            try {
+                Career::insert([
+                    'c_name' => $item,
+                    'c_slug' => Str::slug($item),
+                    'created_at' => Carbon::now()
+                ]);
+            } catch (\Exception $exception)
+            {
+
+            }
         }
 
     }
