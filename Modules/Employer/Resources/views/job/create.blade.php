@@ -27,18 +27,6 @@
 					 		<div class="profile-form-edit">
                                 @include('employer::job.form')
 					 		</div>
-					 		<div class="contact-edit">
-					 			<form>
-					 				<div class="row">
-					 					<div class="col-lg-12">
-					 						<a href="#" title="" class="srch-lctn">Search Location</a>
-					 					</div>
-					 					<div class="col-lg-12">
-					 						<button type="submit">Next</button>
-					 					</div>
-					 				</div>
-					 			</form>
-					 		</div>
 					 	</div>
                 </div>
             </div>

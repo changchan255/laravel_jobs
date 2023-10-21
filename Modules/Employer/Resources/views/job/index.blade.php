@@ -31,30 +31,27 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <td>Title</td>
-                                        <td>Applications</td>
-                                        <td>Created &amp; Expired</td>
-                                        <td>Status</td>
-                                        <td>Action</td>
+                                        <td>Tiêu đề</td>
+                                        <td>Thời gian tạo &amp; Hạn nộp hồ sơ</td>
+                                        <td>Trạng thái</td>
+                                        <td>Thao tác</td>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($jobs ?? [] as $item)
                                     <tr>
                                         <td>
                                             <div class="table-list-title">
-                                                <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                                                <span><i class="la la-map-marker"></i>Sacramento, California</span>
+                                                <h3><a href="" title="">{{ $item->j_name }}</a></h3>
+                                                <span><i class="la la-map-marker"></i>{{ $item-> j_address}}</span>
                                             </div>
                                         </td>
                                         <td>
-                                            <span class="applied-field">3+ Applied</span>
+                                            <span>{{ $item->created_at }}</span><br>
+                                            <span>{{ $item->j_time }}</span>
                                         </td>
                                         <td>
-                                            <span>October 27, 2017</span><br>
-                                            <span>April 25, 2011</span>
-                                        </td>
-                                        <td>
-                                            <span class="status active">Active</span>
+                                            <span class="status active">{{ $item->getStatus($item->j_status)['name'] }}</span>
                                         </td>
                                         <td>
                                             <ul class="action_job">
@@ -64,81 +61,7 @@
                                             </ul>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="table-list-title">
-                                                <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                                                <span><i class="la la-map-marker"></i>Sacramento, California</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span class="applied-field">3+ Applied</span>
-                                        </td>
-                                        <td>
-                                            <span>October 27, 2017</span><br>
-                                            <span>April 25, 2011</span>
-                                        </td>
-                                        <td>
-                                            <span class="status active">Active</span>
-                                        </td>
-                                        <td>
-                                            <ul class="action_job">
-                                                <li><span>View Job</span><a href="#" title=""><i class="la la-eye"></i></a></li>
-                                                <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="table-list-title">
-                                                <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                                                <span><i class="la la-map-marker"></i>Sacramento, California</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span class="applied-field">3+ Applied</span>
-                                        </td>
-                                        <td>
-                                            <span>October 27, 2017</span><br>
-                                            <span>April 25, 2011</span>
-                                        </td>
-                                        <td>
-                                            <span class="status">Inactive</span>
-                                        </td>
-                                        <td>
-                                            <ul class="action_job">
-                                                <li><span>View Job</span><a href="#" title=""><i class="la la-eye"></i></a></li>
-                                                <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="table-list-title">
-                                                <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                                                <span><i class="la la-map-marker"></i>Sacramento, California</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span class="applied-field">3+ Applied</span>
-                                        </td>
-                                        <td>
-                                            <span>October 27, 2017</span><br>
-                                            <span>April 25, 2011</span>
-                                        </td>
-                                        <td>
-                                            <span class="status active">Active</span>
-                                        </td>
-                                        <td>
-                                            <ul class="action_job">
-                                                <li><span>View Job</span><a href="#" title=""><i class="la la-eye"></i></a></li>
-                                                <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                                            </ul>
-                                        </td>
-                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -1,4 +1,5 @@
-<form>
+<form action="" method="POST">
+    @csrf
     <div class="row">
         <div class="col-lg-12">
             <span class="pf-title">Vị trí đăng tuyển<span class="red_w">*</span></span>
@@ -10,7 +11,16 @@
             @endif
         </div>
         <div class="col-lg-12">
-            <span class="pf-title">Mô tả</span>
+            <span class="pf-title">Địa chỉ<span class="red_w">*</span></span>
+            <div class="pf-field">
+                <input type="text" placeholder="Designer" name="j_address" value="{{ old('j_address', $job->j_address ?? '') }}">
+            </div>
+            @if($errors->has('j_address'))
+                <span class="text-danger" style="color: red !important;font-size: 13px">{{ $errors->first('j_address') }}</span>
+            @endif
+        </div>
+        <div class="col-lg-12">
+            <span class="pf-title">Mô tả<span class="red_w">*</span></span>
             <div class="pf-field">
                 <textarea name="j_description">{!! old('j_description', $job->j_description ?? '') !!}</textarea>
             </div>
@@ -19,10 +29,10 @@
             @endif
         </div>
         <div class="col-lg-6">
-            <span class="pf-title">Ngành nghề</span>
+            <span class="pf-title">Ngành nghề<span class="red_w">*</span></span>
             <div class="pf-field">
                 <select name="j_career_id" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
-                    <option>Chọn ngành nghề</option>
+                    <option value="">Chọn ngành nghề</option>
                     @foreach($careers as $item)
                         <option value="{{ $item->id }}">{{ $item->c_name }}</option>
                     @endforeach
@@ -33,15 +43,70 @@
             @endif
         </div>
         <div class="col-lg-6">
-            <span class="pf-title">Kinh nghiệm</span>
+            <span class="pf-title">Kinh nghiệm<span class="red_w">*</span></span>
             <div class="pf-field">
                 <select name="j_experience_id" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
-                    <option>Chọn kinh nghiệm</option>
+                    <option value="">Chọn kinh nghiệm</option>
                     @foreach($experience as $item)
                         <option value="{{ $item->id }}">{{ $item->a_name }}</option>
                     @endforeach
                 </select>
             </div>
+            @if($errors->has('j_experience_id'))
+                <span class="text-danger" style="color: red !important;font-size: 13px">{{ $errors->first('j_experience_id') }}</span>
+            @endif
+        </div>
+        <div class="col-lg-6">
+            <span class="pf-title">Làm thêm giờ (Overtime)</span>
+            <div class="pf-field">
+                <select name="j_ot" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
+                    <option value="1">Không</option>
+                    <option value="2">Có</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <span class="pf-title">Cấp bậc<span class="red_w">*</span></span>
+            <div class="pf-field">
+                <select name="j_rank_id" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
+                    <option value="">Chọn cấp bậc</option>
+                    @foreach($ranks as $item)
+                        <option value="{{ $item->id }}">{{ $item->a_name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            @if($errors->has('j_rank_id'))
+                <span class="text-danger" style="color: red !important;font-size: 13px">{{ $errors->first('j_rank_id') }}</span>
+            @endif
+        </div>
+        <div class="col-lg-6">
+        <span class="pf-title">Loại hình làm việc<span class="red_w">*</span></span>
+        <div class="pf-field">
+            <select name="j_form_of_work_id" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
+                <option value="">Chọn loại hình</option>
+                @foreach($formOfWork as $item)
+                    <option value="{{ $item->id }}">{{ $item->a_name }}</option>
+                @endforeach
+            </select>
+        </div>
+        @if($errors->has('j_form_of_work_id'))
+            <span class="text-danger" style="color: red !important;font-size: 13px">{{ $errors->first('j_form_of_work_id') }}</span>
+        @endif
+    </div>
+        <div class="col-lg-6">
+            <span class="pf-title">Mức lương</span>
+            <div class="pf-field">
+                <input type="text" name="j_salary" value="{{ old('j_salary', $job->j_salary ?? 0) }}">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <span class="pf-title">Hạn nộp hồ sơ<span class="red_w">*</span></span>
+            <div class="pf-field">
+                <input type="date" name="j_time" value="{{ old('j_time', $job->j_time ?? 0) }}">
+            </div>
+            @if($errors->has('j_time'))
+                <span class="text-danger" style="color: red !important;font-size: 13px">{{ $errors->first('j_time') }}</span>
+            @endif
         </div>
         <div class="col-lg-6">
             <span class="pf-title">Email</span>
@@ -55,50 +120,8 @@
                 <input type="text" name="j_phone" value="{{ old('j_phone', $job->j_phone ?? '') }}">
             </div>
         </div>
-        <div class="col-lg-6">
-            <span class="pf-title">Offerd Salary</span>
-            <div class="pf-field">
-                <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
-                    <option>Web Development</option>
-                    <option>Web Designing</option>
-                    <option>Art &amp; Culture</option>
-                    <option>Reading &amp; Writing</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <span class="pf-title">Career Level</span>
-            <div class="pf-field">
-                <select data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
-                    <option>Web Development</option>
-                    <option>Web Designing</option>
-                    <option>Art &amp; Culture</option>
-                    <option>Reading &amp; Writing</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <span class="pf-title">Application Deadline Date</span>
-            <div class="pf-field">
-                <input type="text" placeholder="01.11.207" class="form-control datepicker">
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <span class="pf-title">Skill Requirments</span>
-            <div class="pf-field">
-                <ul class="tags">
-                    <li class="addedTag">Photoshop<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Deisgn"></li>
-                    <li class="tagAdd taglist">
-                        <input type="text" id="search-field">
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <span class="pf-title">Complete Address</span>
-            <div class="pf-field">
-                <textarea>Collins Street West, Victoria 8007, Australia.</textarea>
-            </div>
+        <div class="col-lg-12 mb-5">
+                <button type="submit">Xử lí thông tin</button>
         </div>
 
     </div>
