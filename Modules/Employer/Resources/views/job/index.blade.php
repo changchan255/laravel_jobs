@@ -55,8 +55,8 @@
                                         </td>
                                         <td>
                                             <ul class="action_job">
-                                                <li><span>View Job</span><a href="#" title=""><i class="la la-eye"></i></a></li>
-                                                <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
+                                                <li><span>View Job</span><a href="" title=""><i class="la la-eye"></i></a></li>
+                                                <li><span>Edit</span><a href="{{ route('get_employer.job.update', $item->id) }}" title=""><i class="la la-pencil"></i></a></li>
                                                 <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
                                             </ul>
                                         </td>

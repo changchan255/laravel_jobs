@@ -34,7 +34,8 @@
                 <select name="j_career_id" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
                     <option value="">Chọn ngành nghề</option>
                     @foreach($careers as $item)
-                        <option value="{{ $item->id }}">{{ $item->c_name }}</option>
+                        <option value="{{ $item->id }}"
+                            {{ old('j_career_id', ($job->j_career_id ?? 0)) == $item->id ? "selected" : "" }}>{{ $item->c_name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -48,7 +49,8 @@
                 <select name="j_experience_id" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
                     <option value="">Chọn kinh nghiệm</option>
                     @foreach($experience as $item)
-                        <option value="{{ $item->id }}">{{ $item->a_name }}</option>
+                        <option value="{{ $item->id }}"
+                            {{ old('j_experience_id', ($job->j_experience_id ?? 0)) == $item->id ? "selected" : "" }}>{{ $item->a_name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -60,8 +62,8 @@
             <span class="pf-title">Làm thêm giờ (Overtime)</span>
             <div class="pf-field">
                 <select name="j_ot" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
-                    <option value="1">Không</option>
-                    <option value="2">Có</option>
+                    <option value="1" {{ old('j_ot', ($job->j_ot ?? 0)) == 1 ? "selected" : "" }}>Không</option>
+                    <option value="2" {{ old('j_ot', ($job->j_ot ?? 0)) == 2 ? "selected" : "" }}>Có</option>
                 </select>
             </div>
         </div>
@@ -71,7 +73,8 @@
                 <select name="j_rank_id" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
                     <option value="">Chọn cấp bậc</option>
                     @foreach($ranks as $item)
-                        <option value="{{ $item->id }}">{{ $item->a_name }}</option>
+                        <option value="{{ $item->id }}"
+                            {{ old('j_rank_id', ($job->j_rank_id ?? 0)) == $item->id ? "selected" : "" }}>{{ $item->a_name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -85,7 +88,8 @@
             <select name="j_form_of_work_id" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
                 <option value="">Chọn loại hình</option>
                 @foreach($formOfWork as $item)
-                    <option value="{{ $item->id }}">{{ $item->a_name }}</option>
+                    <option value="{{ $item->id }}"
+                        {{ old('j_form_of_work_id', ($job->j_form_of_work_id ?? 0)) == $item->id ? "selected" : "" }} >{{ $item->a_name }}</option>
                 @endforeach
             </select>
         </div>
