@@ -18,6 +18,9 @@ Route::prefix('employer')->group(function() {
         Route::get('', 'EmployerJobController@index')->name('get_employer.job.index');
         Route::get('create', 'EmployerJobController@create')->name('get_employer.job.create');
         Route::post('create', 'EmployerJobController@store');
+
+        Route::get('update/{id}','EmployerJobController@edit')->name('get_employer.job.update');
+        Route::post('update/{id}','EmployerJobController@update');
     });
 
     Route::prefix('company')->group(function() {

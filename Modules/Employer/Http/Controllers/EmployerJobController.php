@@ -67,4 +67,41 @@ class EmployerJobController extends Controller
         }
         return redirect()->back();
     }
+
+    public function edit($id)
+    {
+        $job = Job::where([
+            'id' => $id,
+            'j_employer_id' => get_data_user('users')
+        ])->first();
+        if(!$job) return abort(404);
+
+        $experience = Attribute::where('a_type', Attribute::TYPE_EXPERIENCE)->get();
+        $ranks = Attribute::where('a_type', Attribute::TYPE_RANK)->get();
+        $formOfWork = Attribute::where('a_type', Attribute::TYPE_FORM_OF_WORK)->get();
+        $careers = Career::all();
+        $viewData = [
+            'experience' => $experience,
+            'careers' => $careers,
+            'ranks' => $ranks,
+            'job' => $job,
+            'formOfWork' => $formOfWork,
+        ];
+        return view('employer::job.update', $viewData);
+    }
+
+    public function update(EmployerJobRequest $request, $id) {
+        $job = Job::where([
+            'id' => $id,
+            'j_employer_id' => get_data_user('users')
+        ])->first();
+        if(!$job) return abort(404);
+
+        $data = $request->except('_token');
+        $data['j_slug'] = Str::slug($request->j_name);
+        $data['updated_at'] = Carbon::now();
+        $job->fill($data)->save();
+
+        return redirect()->back();
+    }
 }
