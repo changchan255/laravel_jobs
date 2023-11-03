@@ -12,5 +12,20 @@
 */
 
 Route::prefix('admin')->group(function() {
-    Route::get('/', 'AdminController@index');
+    Route::get('/', 'AdminDashboardController@index')->name('get_admin.index');
+    Route::prefix('career')->group(function () {
+        Route::get('/', 'AdminCareerController@index')->name('get_admin.career.index');
+    });
+    Route::prefix('attribute')->group(function () {
+        Route::get('/', 'AdminAttributeController@index')->name('get_admin.attribute.index');
+    });
+    Route::prefix('job')->group(function () {
+        Route::get('/', 'AdminJobController@index')->name('get_admin.job.index');
+    });
+    Route::prefix('user')->group(function () {
+        Route::get('/', 'AdminUserController@index')->name('get_admin.user.index');
+    });
+    Route::prefix('employer')->group(function () {
+        Route::get('/', 'AdminEmployerController@index')->name('get_admin.employer.index');
+    });
 });
