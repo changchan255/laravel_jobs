@@ -31,7 +31,7 @@
                                                 <span><i class="la la-map-marker"></i>{{ $job->j_address }}</span><span class="job-is ft">Full time</span>
                                                 <ul class="tags-jobs">
                                                     <li><i class="la la-file-text"></i> Applications 1</li>
-                                                    <li><i class="la la-calendar-o"></i> Post Date: July 29, 2017</li>
+                                                    <li><i class="la la-calendar-o"></i> Deadline: {{ $job->j_time }}</li>
                                                     <li><i class="la la-eye"></i> Views 5683</li>
                                                 </ul>
                                             </div>
@@ -53,18 +53,7 @@
                                 <div class="row">
                                     <div class="col-lg-8 column">
                                         <div class="job-details">
-                                            <h3>About Business Network</h3>
-                                            <p>Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly vehement irresistibly fussy penguin insect additionally wow absolutely crud meretriciously hastily dalmatian a glowered inset one echidna cassowary some parrot and much as goodness some froze the sullen much connected bat wonderfully on instantaneously eel valiantly petted this along across highhandedly much. </p>
-                                            <p>Repeatedly dreamed alas opossum but dramatically despite expeditiously that jeepers loosely yikes that as or eel underneath kept and slept compactly far purred sure abidingly up above fitting to strident wiped set waywardly far the and pangolin horse approving paid chuckled cassowary oh above a much opposite far much hypnotically more therefore wasp less that hey apart well like while superbly orca and far hence one.Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly vehement irresistibly fussy.</p>
-                                            <ul>
-                                                <li>Ability to write code – HTML &amp; CSS (SCSS flavor of SASS preferred when writing CSS)</li>
-                                                <li>Proficient in Photoshop, Illustrator, bonus points for familiarity with Sketch (Sketch is our preferred concepting)</li>
-                                                <li>Cross-browser and platform testing as standard practice</li>
-                                                <li>Experience using Invision a plus</li>
-                                                <li>Experience in video production a plus or, at a minimum, a willingness to learn</li>
-                                            </ul>
-                                            <p>Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly vehement irresistibly fussy penguin insect additionally wow absolutely crud meretriciously hastily dalmatian a glowered inset one echidna cassowary some parrot and much as goodness some froze the sullen much connected bat wonderfully on instantaneously eel valiantly petted this along across highhandedly much. </p>
-                                            <p>Repeatedly dreamed alas opossum but dramatically despite expeditiously that jeepers loosely yikes that as or eel underneath kept and slept compactly far purred sure abidingly up above fitting to strident wiped set waywardly far the and pangolin horse approving paid chuckled cassowary oh above a much opposite far much hypnotically more therefore wasp less that hey apart well like while superbly orca and far hence one.Far much that one rank beheld bluebird after outside ignobly allegedly more when oh arrogantly vehement irresistibly fussy.</p>
+                                           {!! $job->j_description !!}
                                         </div>
                                         <div class="recent-jobs">
                                             <h3>Jobs from Business Network</h3>
@@ -127,7 +116,7 @@
                                     </div>
                                     <div class="col-lg-4 column">
                                         <div class="job-overview">
-                                            <h3>Company Information</h3>
+                                            <h3>Thông tin công ty</h3>
                                             <ul>
                                                 <li>
                                                     <i class="la la-eye"></i>

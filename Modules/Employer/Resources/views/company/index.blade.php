@@ -25,7 +25,7 @@
                                 <h3>Cập nhật thông tin công ty</h3>
                             </div>
                             <div class="profile-form-edit">
-                                <form action="{{ route('get_employer.company.store') }}" method="POST">
+                                <form action="{{ route('get_employer.company.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -98,6 +98,13 @@
                                                     @endforeach
                                                 </select>
                                             </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Logo</span>
+                                            <div class="pf-field">
+                                               <input type="file" class="form-control" name="logo">
+                                            </div>
+                                            <p>{{ $company->c_logo ?? "" }}</p>
                                         </div>
                                         <div class="col-lg-12">
                                             <span class="pf-title">Mô tả công ty</span>

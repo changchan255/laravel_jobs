@@ -29,9 +29,14 @@ class EmployerCompanyController extends Controller
 
     public function store(CompanyRequest $request)
     {
-        $data = $request->except('_token');
+        $data = $request->except('_token', 'logo');
         $data['c_slug'] = Str::slug($request->c_name);
         $data['created_at'] = Carbon::now();
+        if ($request->logo) {
+            $image = upload_image('logo');
+            if ($image['code'] == 1)
+                $data['c_logo'] = $image['name'];
+        }
         $company = Company::where('c_employer_id', get_data_user('users'))->first();
         if ($company) {
             $company->fill($data)->save();

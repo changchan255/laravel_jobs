@@ -23,7 +23,8 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'account'], function () {
     Route::post('register', [RegisterController::class, 'postRegister'])->name('post.register');
 });
 Route::get('', [HomeController::class, 'index'])->name('get.home');
+Route::get('job/nganh-nghe-{slug}.html', [CareerController::class, 'index'])->name('get.career.index');
 Route::get('job/{slug}-{hashID}.html', [JobController::class, 'index'])->name('get.job')
     ->where(['slug' => '[a-z-]+','hashID' => '[a-z0-9A-Z]+']);
-Route::get('job/nganh-nghe-{slug}.html', [CareerController::class, 'index'])->name('get.career.index');
+
 

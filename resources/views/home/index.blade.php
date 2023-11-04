@@ -122,9 +122,11 @@
                             @foreach($jobsNew as $item)
 							<div class="job-listing">
 								<div class="job-title-sec">
-									<div class="c-logo"> <img src="{{asset('assets/jobboard/images/resource/l1.png') }}" alt="" /> </div>
+									<div class="c-logo"> <img
+                                            src="{{ pare_url_file($item->company->c_logo ?? "") }}"
+                                            alt=""/></div>
 									<h3><a href="{{ route('get.job',['slug' => $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="">{{ $item->j_name }}</a></h3>
-									<span>Massimo Artemisis</span>
+									<span>{{ $item->company->c_name ?? "[N/A]" }}</span>
 								</div>
 								<span class="job-lctn"><i class="la la-map-marker"></i>{{ $item->j_address }}</span>
 								<span class="fav-job"><i class="la la-heart-o"></i></span>
