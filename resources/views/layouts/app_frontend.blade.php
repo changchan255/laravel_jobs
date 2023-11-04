@@ -161,20 +161,38 @@
 				<div class="logo">
 					<a href="" title=""><img class="hidesticky" src="{{asset('assets/jobboard/images/resource/logo.png') }}" alt="" /><img class="showsticky" src="{{asset('assets/jobboard/images/resource/logo10.png') }}" alt="" /></a>
 				</div><!-- Logo -->
-				<div class="btn-extars">
-					<a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Đăng Tin</a>
-					<ul class="account-btns">
-						<li class="signup-popup"><a title=""><i class="la la-key"></i> Đăng ký</a></li>
-						<li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> Đăng nhập</a></li>
-					</ul>
-				</div><!-- Btn Extras -->
+
+                @if(get_data_user('users'))
+                    <div class="btns-profiles-sec">
+                        <span><img src="http://127.0.0.1:8000/assets/jobboard/images/resource/profile.jpg" alt=""> Nguyễn Thu Trang <i class="la la-angle-down"></i></span>
+                        <ul>
+                            <li><a href="employer_profile.html" title=""><i class="la la-file-text"></i>Company Profile</a></li>
+                            <li><a href="employer_manage_jobs.html" title=""><i class="la la-briefcase"></i>Manage Jobs</a></li>
+                            <li><a href="employer_transactions.html" title=""><i class="la la-money"></i>Transactions</a></li>
+                            <li><a href="employer_resume.html" title=""><i class="la la-paper-plane"></i>Resumes</a></li>
+                            <li><a href="employer_packages.html" title=""><i class="la la-user"></i>Packages</a></li>
+                            <li><a href="employer_post_new.html" title=""><i class="la la-file-text"></i>Post a New Job</a></li>
+                            <li><a href="employer_job_alert.html" title=""><i class="la la-flash"></i>Job Alerts</a></li>
+                            <li><a href="employer_change_password.html" title=""><i class="la la-lock"></i>Change Password</a></li>
+                            <li><a href="#" title=""><i class="la la-unlink"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                @else
+                    <div class="btn-extars">
+                        <a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Đăng Tin</a>
+                        <ul class="account-btns">
+                            <li class="signup-popup"><a title=""><i class="la la-key"></i> Đăng ký</a></li>
+                            <li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> Đăng nhập</a></li>
+                        </ul>
+                    </div><!-- Btn Extras -->
+                @endif
 				<nav>
 					<ul>
 						<li class="">
 							<a href="{{ route('get.home') }}" title="">Trang chủ</a>
 						</li>
 						<li class="menu-item-has-children">
-							<a href="{{ route('get.job',['slug' => 'danh-sach-viec-lam']) }}" title="Việc làm">Việc làm</a>
+							<a href="" title="Việc làm">Việc làm</a>
 							<ul>
 								<li><a href="" title="">Việc làm theo địa điểm</a></li>
 								<li><a href="" title="">Việc làm nổi bật</a></li>

@@ -54,7 +54,7 @@ class EmployerJobController extends Controller
             $job->save();
 
             $hashids = new Hashids(config('app._token_id'));
-            $hashID = $hashids->encode(1, 10, 112, 1212, 12, 2, 1, 2, $job->id);
+            $hashID = $hashids->encode(1, 10, 12, 2, 1, $job->id);
             $job->j_hash_slug = $hashID;
             $job->save();
 

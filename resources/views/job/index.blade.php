@@ -3,7 +3,7 @@
 <section class="overlape">
     <div class="block no-padding">
         <div data-velocity="-.1" style="background: url({{asset('assets/jobboard/images/resource/mslider1.jpg') }}) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div>
-        <!-- PARALLAX BACKGROUND IMAGE --> 
+        <!-- PARALLAX BACKGROUND IMAGE -->
         <div class="container fluid">
             <div class="row">
                 <div class="col-lg-12">
@@ -104,45 +104,21 @@
                         <a href="#" title="" class="active">ALL</a><a href="#" title="">A</a><a href="#" title="">B</a><a href="#" title="">C</a><a href="#" title="">D</a><a href="#" title="">E</a><a href="#" title="">F</a><a href="#" title="">G</a><a href="#" title="">H</a><a href="#" title="">I</a><a href="#" title="">J</a><a href="#" title="">K</a><a href="#" title="">L</a><a href="#" title="">M</a><a href="#" title="">N</a><a href="#" title="">O</a><a href="#" title="">P</a><a href="#" title="">Q</a><a href="#" title="">R</a><a href="#" title="">S</a><a href="#" title="">T</a><a href="#" title="">U</a><a href="#" title="">V</a><a href="#" title="">W</a><a href="#" title="">X</a><a href="#" title="">Y</a><a href="#" title="">Z</a>
                     </div>
                     <div class="emply-list-sec style2">
+                        @foreach($jobs as $item)
                         <div class="emply-list">
                             <div class="emply-list-thumb">
-                                <a href="#" title=""><img src="{{asset('assets/jobboard/images/resource/em1.jpg') }}" alt=""></a>
+                                <a href="#" title="">
+                                    <img src="{{asset('assets/jobboard/images/resource/em1.jpg') }}" alt=""></a>
                             </div>
                             <div class="emply-list-info">
                                 <div class="emply-pstn">4 Open Position</div>
-                                <h3><a href="#" title="">King LLC</a></h3>
-                                <span>Accountancy, Human Resources</span>
-                                <h6><i class="la la-map-marker"></i> Toronto, Ontario</h6>
-                                <p>The Heavy Equipment / Grader Operator  is responsible for operating one or several types construction equipment, such as front end loader, roller, bulldozer, or excavator to move,…</p>
+                                <h3><a href="#" title="">{{ $item->j_name }}</a></h3>
+                                <span>{{ $item->company->c_name ?? "[N/A]"}}</span>
+                                <h6><i class="la la-map-marker"></i> {{ $item->j_address }}</h6>
                             </div>
                         </div>
+                        @endforeach
                         <!-- Employe List -->
-                        <div class="emply-list">
-                            <div class="emply-list-thumb">
-                                <a href="#" title=""><img src="{{asset('assets/jobboard/images/resource/em2.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="emply-list-info">
-                                <div class="emply-pstn">4 Open Position</div>
-                                <h3><a href="#" title="">Telimed</a></h3>
-                                <span>Accounting Assistant, Arts, Design, and Media</span>
-                                <h6><i class="la la-map-marker"></i> Toronto, Ontario</h6>
-                                <p>The Heavy Equipment / Grader Operator  is responsible for operating one or several types construction equipment, such as front end loader, roller, bulldozer, or excavator to move,…</p>
-                            </div>
-                        </div>
-                        <!-- Employe List -->
-                        
-                        <div class="pagination">
-                            <ul>
-                                <li class="prev"><a href=""><i class="la la-long-arrow-left"></i> Prev</a></li>
-                                <li><a href="">1</a></li>
-                                <li class="active"><a href="">2</a></li>
-                                <li><a href="">3</a></li>
-                                <li><span class="delimeter">...</span></li>
-                                <li><a href="">14</a></li>
-                                <li class="next"><a href="">Next <i class="la la-long-arrow-right"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- Pagination -->
                     </div>
                 </div>
             </div>

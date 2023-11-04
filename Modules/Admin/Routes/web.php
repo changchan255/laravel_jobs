@@ -21,6 +21,8 @@ Route::prefix('admin')->group(function() {
     });
     Route::prefix('job')->group(function () {
         Route::get('/', 'AdminJobController@index')->name('get_admin.job.index');
+        Route::get('/update{id}', 'AdminJobController@edit')->name('get_admin.job.update');
+        Route::post('/update{id}', 'AdminJobController@update');
     });
     Route::prefix('user')->group(function () {
         Route::get('/', 'AdminUserController@index')->name('get_admin.user.index');

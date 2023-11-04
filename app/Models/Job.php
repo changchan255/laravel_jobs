@@ -20,18 +20,22 @@ class Job extends Model
     public $status = [
         self::STATUS_PROCESS => [
             'class' => 'btn-warning',
+            'class-text' => 'text-warning',
             'name' => 'Chờ duyệt'
         ],
         self::STATUS_SUCCESS => [
             'class' => 'btn-success',
+            'class-text' => 'text-success',
             'name' => 'Đã duyệt'
         ],
         self::STATUS_CANCEL  => [
             'class' => 'btn-danger',
+            'class-text' => 'text-danger',
             'name' => 'Đã hủy'
         ],
         self::STATUS_REQUEST => [
             'class' => 'btn-primary',
+            'class-text' => 'text-primary',
             'name' => 'Yêu cầu duyệt lại'
         ],
     ];
@@ -39,5 +43,16 @@ class Job extends Model
     public function getStatus()
     {
         return Arr::get($this->status, $this->j_status, []);
+    }
+
+    public function career()
+    {
+        return $this->belongsTo(Career::class, 'j_career_id');
+    }
+
+
+    public function company()  //tra ve ten cong ty trong muc job.index
+    {
+        return $this->belongsTo(Company::class, 'j_company_id');
     }
 }

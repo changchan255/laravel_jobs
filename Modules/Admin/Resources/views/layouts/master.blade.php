@@ -70,7 +70,7 @@
                 <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
                     <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
                         <div class="d-table m-auto">
-                            <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="/template_admin/images/shards-dashboards-logo.svg" alt="Shards Dashboard">
+                            <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="{{ asset('template_admin/images/shards-dashboards-logo.svg') }}" alt="Shards Dashboard">
                             <span class="d-none d-md-inline ml-1">Shards Dashboard</span>
                         </div>
                     </a>
@@ -157,7 +157,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <img class="user-avatar rounded-circle mr-2" src="/template_admin/images/avatars/0.jpg" alt="User Avatar">
+                                <img class="user-avatar rounded-circle mr-2" src="{{ asset('template_admin/images/avatars/0.jpg') }}" alt="User Avatar">
                                 <span class="d-none d-md-inline-block">Sierra Brooks</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-small">
@@ -207,23 +207,6 @@
                         </span>
             </footer>
         </main>
-    </div>
-</div>
-<div class="promo-popup animated">
-    <a href="http://bit.ly/shards-dashboard-pro" class="pp-cta extra-action">
-        <img src="https://dgc2qnsehk7ta.cloudfront.net/uploads/sd-blog-promo-2.jpg"> </a>
-    <div class="pp-intro-bar"> Need More Templates?
-        <span class="close">
-                <i class="material-icons">close</i>
-                </span>
-        <span class="up">
-                <i class="material-icons">keyboard_arrow_up</i>
-                </span>
-    </div>
-    <div class="pp-inner-content">
-        <h2>Shards Dashboard Pro</h2>
-        <p>A premium & modern Bootstrap 4 admin dashboard template pack.</p>
-        <a class="pp-cta extra-action" href="http://bit.ly/shards-dashboard-pro">Download</a>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

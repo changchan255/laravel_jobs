@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function index() {
         $jobsNew = Job::orderByDesc('id')
             ->limit(10)
-            ->get(['id', 'j_name', 'j_address']);
+            ->get(['id', 'j_name', 'j_address', 'j_slug','j_hash_slug']);
 
         $careersHot = Career::where('c_hot', Career::HOT)
         ->limit(8)
