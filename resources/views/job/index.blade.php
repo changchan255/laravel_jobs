@@ -104,15 +104,15 @@
                         <a href="#" title="" class="active">ALL</a><a href="#" title="">A</a><a href="#" title="">B</a><a href="#" title="">C</a><a href="#" title="">D</a><a href="#" title="">E</a><a href="#" title="">F</a><a href="#" title="">G</a><a href="#" title="">H</a><a href="#" title="">I</a><a href="#" title="">J</a><a href="#" title="">K</a><a href="#" title="">L</a><a href="#" title="">M</a><a href="#" title="">N</a><a href="#" title="">O</a><a href="#" title="">P</a><a href="#" title="">Q</a><a href="#" title="">R</a><a href="#" title="">S</a><a href="#" title="">T</a><a href="#" title="">U</a><a href="#" title="">V</a><a href="#" title="">W</a><a href="#" title="">X</a><a href="#" title="">Y</a><a href="#" title="">Z</a>
                     </div>
                     <div class="emply-list-sec style2">
-                        @foreach($jobs as $item)
+                        @foreach($jobs ?? [] as $item)
                         <div class="emply-list">
                             <div class="emply-list-thumb">
-                                <a href="#" title="">
+                                <a href="{{ route('get.job',['slug' => $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="">
                                     <img src="{{asset('assets/jobboard/images/resource/em1.jpg') }}" alt=""></a>
                             </div>
                             <div class="emply-list-info">
                                 <div class="emply-pstn">4 Open Position</div>
-                                <h3><a href="#" title="">{{ $item->j_name }}</a></h3>
+                                <h3><a href="{{ route('get.job',['slug' => $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="">{{ $item->j_name }}</a></h3>
                                 <span>{{ $item->company->c_name ?? "[N/A]"}}</span>
                                 <h6><i class="la la-map-marker"></i> {{ $item->j_address }}</h6>
                             </div>

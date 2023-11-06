@@ -1,4 +1,7 @@
 @extends('layouts.app_frontend')
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
+@stop
 @section('content')
     <section>
 		<div class="block no-padding">
@@ -13,17 +16,17 @@
 								<div class="job-search">
 									<h3>Hệ thống tìm việc lớn nhất Việt Nam</h3>
 									<span>Nơi kết nối giấc mơ và cơ hội</span>
-									<form>
+									<form action="{{ route('get.search.job') }}" >
 										<div class="row">
 											<div class="col-lg-7 col-md-5 col-sm-12 col-xs-12">
 												<div class="job-field">
-													<input type="text" placeholder="Chức danh, Kỹ năng, Tên công ty" />
+													<input type="text" name="t" placeholder="Chức danh, Kỹ năng, Tên công ty" />
 													<i class="la la-keyboard-o"></i>
 												</div>
 											</div>
 											<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
 												<div class="job-field">
-													<select data-placeholder="City, province or region" class="chosen-city">
+													<select data-placeholder="City, province or region" class="chosen-city name="l">
 														<option>Hà Nội </option>
 														<option>Hồ Chí Minh</option>
 														<option>Đà Nẵng</option>
@@ -129,7 +132,7 @@
 									<span>{{ $item->company->c_name ?? "[N/A]" }}</span>
 								</div>
 								<span class="job-lctn"><i class="la la-map-marker"></i>{{ $item->j_address }}</span>
-								<span class="fav-job"><i class="la la-heart-o"></i></span>
+								<span class="fav-job {{ get_data_user('users') ? 'js-favourite' : 'js-login-message' }}" data-url="{{ route('ajax_get.add.favourite', $item->j_hash_slug) }}"><i class="la la-heart-o"></i></span>
 								<span class="job-is ft">FULL TIME</span>
 							</div><!-- Job -->
                             @endforeach

@@ -1,9 +1,11 @@
+import * as Toastr from 'toastr';
 var Auth = {
     init : function ()
     {
         this.postLogin()
         this.postRegister()
         this.runToken()
+        this.showMessageLogin()
 
     },
     runToken()
@@ -13,6 +15,16 @@ var Auth = {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+    },
+
+    showMessageLogin()
+    {
+        $(".js-login-message").click(function (event){
+            event.preventDefault()
+            Toastr.warning("Bạn cần đăng nhập để thực hiện tính năng này.")
+            return
+        })
+
     },
     postRegister()
     {
@@ -25,7 +37,9 @@ var Auth = {
                 type:'POST',
                 data:formData,
                 success:function(data){
-                    console.log(data);
+                    if (typeof data.email !== "undefined") {
+                        location.reload();
+                    }
                 },
                 error: function (response) {
                     if( response.status === 422 ) {
@@ -61,7 +75,6 @@ var Auth = {
                     }
                 }
             });
-            console.log("login")
         })
     }
 }

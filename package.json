@@ -13,6 +13,9 @@
     "axios": "^1.1.2",
     "laravel-mix": "^6.0.49",
     "laravel-vite-plugin": "^0.8.0",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^12.1.0",
     "vite": "^4.0.0"
   },
   "name": "laravel_jobs",
@@ -467,6 +470,7 @@
     "to-arraybuffer": "^1.0.1",
     "to-fast-properties": "^2.0.0",
     "to-regex-range": "^5.0.1",
+    "toastr": "^2.1.4",
     "toidentifier": "^1.0.1",
     "tslib": "^2.6.2",
     "tty-browserify": "^0.0.0",

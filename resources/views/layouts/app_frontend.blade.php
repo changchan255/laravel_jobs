@@ -18,6 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/jobboard/css/colors.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/jobboard/css/bootstrap.css') }}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    @yield('css')
 
 </head>
 <body>
@@ -169,7 +170,7 @@
                             @foreach(config('user.drop_menu') as $item)
                             <li><a href="{{ route($item['route']) }}" title=""><i class="la la-file-text"></i>{{ $item['name'] }}</a></li>
                             @endforeach
-                                <li><a href="" title=""><i class="la la-unlink"></i>Đăng xuất</a></li>
+                                <li><a href="{{ route('get.logout') }}" title=""><i class="la la-unlink"></i>Đăng xuất</a></li>
                         </ul>
                     </div>
                 @else

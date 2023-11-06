@@ -1,4 +1,5 @@
-import Auth from "C:/Users/Admin/laravel_jobs/resources/js/components/_inc_auth";
+import Auth from "../components/_inc_auth";
+import Favourite from "../components/_inc_favourite";
 
 var Home = {
     init: function () {
@@ -11,4 +12,5 @@ var Home = {
 $(function (){
     Home.init()
     Auth.init()
+    Favourite.init()
 })
