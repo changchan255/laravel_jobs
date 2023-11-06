@@ -14,7 +14,6 @@ class LoginController extends Controller
         if($request->ajax())
         {
             $credentials = $request->only('email', 'password');
-            Log::info($credentials);
             if (\Auth::guard('users')->attempt($credentials)) {
                 //Authentication passed...
                 return response()->json([
@@ -25,5 +24,12 @@ class LoginController extends Controller
                 'status' => 201
             ]);
         }
+    }
+
+    public function getLogout(Request $request) {
+        \Auth::guard('users')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('get.home');
     }
 }

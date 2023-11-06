@@ -169,7 +169,7 @@
                             @foreach(config('user.drop_menu') as $item)
                             <li><a href="{{ route($item['route']) }}" title=""><i class="la la-file-text"></i>{{ $item['name'] }}</a></li>
                             @endforeach
-                                <li><a href="" title=""><i class="la la-unlink"></i>Đăng xuất</a></li>
+                                <li><a href="{{ route('get.logout') }}" title=""><i class="la la-unlink"></i>Đăng xuất</a></li>
                         </ul>
                     </div>
                 @else

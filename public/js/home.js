@@ -35,7 +35,9 @@ var Auth = {
         type: 'POST',
         data: formData,
         success: function success(data) {
-          console.log(data);
+          if (typeof data.email !== "undefined") {
+            location.reload();
+          }
         },
         error: function error(response) {
           if (response.status === 422) {
