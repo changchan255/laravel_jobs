@@ -18,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/jobboard/css/colors.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/jobboard/css/bootstrap.css') }}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-
+    @yield('css')
 </head>
 <body>
 
@@ -293,6 +293,7 @@
 <script src="{{ asset('assets/jobboard/js/parallax.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/jobboard/js/select-chosen.js') }}" type="text/javascript"></script>
 
+@yield('script')
 </body>
 </html>
 

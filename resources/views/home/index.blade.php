@@ -133,7 +133,7 @@
 								</div>
 								<span class="job-lctn"><i class="la la-map-marker"></i>{{ $item->j_address }}</span>
 								<span class="fav-job {{ get_data_user('users') ? 'js-favourite' : 'js-login-message' }}" data-url="{{ route('ajax_get.add.favourite', $item->j_hash_slug) }}"><i class="la la-heart-o"></i></span>
-								<span class="job-is ft">FULL TIME</span>
+								<span class="job-is ft">{{ $item->getAttributeJob->a_name ?? "[N/A]" }}</span>
 							</div><!-- Job -->
                             @endforeach
 						</div>

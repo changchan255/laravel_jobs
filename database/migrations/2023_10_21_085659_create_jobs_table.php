@@ -26,6 +26,7 @@ return new class extends Migration
             $table->integer('j_rank_id')->default(0);
             $table->integer('j_form_of_work_id')->default(0);
             $table->integer('j_salary')->default(0);
+            $table->integer('j_view')->default(0);
             $table->tinyInteger('j_ot')->default(1);
             $table->tinyInteger('j_status')->default(1);
             $table->integer('j_admin_id')->default(0);

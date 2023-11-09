@@ -1,4 +1,7 @@
 @extends('employer::layouts.app_employer')
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/employer.css') }}" />
+@stop
 @section('content')
     <section class="overlape">
 		<div class="block no-padding">
@@ -54,7 +57,17 @@
                                             <span class="text-danger" style="color: red !important;font-size: 13px">{{ $errors->first('c_address') }}</span>
                                         @endif
                                     </div>
-
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Ngành nghề</span>
+                                            <div class="pf-field">
+                                                <select name="careers[]" data-placeholder="Please Select Specialism" class="chosen js-run-select2"
+                                                        style="display: none;" multiple="multiple">
+                                                    @foreach($careers as $item)
+                                                        <option value="{{ $item->id }}" {{ in_array($item->id, $careersCompany) ? "selected" : "" }}>{{ $item->c_name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="col-lg-6">
                                             <span class="pf-title">Quy mô công ty</span>
                                             <div class="pf-field">
@@ -65,6 +78,7 @@
                                                 </select>
                                             </div>
                                         </div>
+
                                         <div class="col-lg-6">
                                             <span class="pf-title">Website</span>
                                             <div class="pf-field">
@@ -125,4 +139,7 @@
     </div>
 </section>
 
+@stop
+@section('script')
+    <script src="{{ asset('js/employer.js') }}"></script>
 @stop

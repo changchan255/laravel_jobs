@@ -15,6 +15,10 @@ Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminDashboardController@index')->name('get_admin.index');
     Route::prefix('career')->group(function () {
         Route::get('/', 'AdminCareerController@index')->name('get_admin.career.index');
+        Route::get('create', 'AdminCareerController@create')->name('get_admin.career.create');
+        Route::post('create', 'AdminCareerController@store');
+        Route::get('/update{id}', 'AdminCareerController@edit')->name('get_admin.career.update');
+        Route::post('/update{id}', 'AdminCareerController@update');
     });
     Route::prefix('attribute')->group(function () {
         Route::get('/', 'AdminAttributeController@index')->name('get_admin.attribute.index');

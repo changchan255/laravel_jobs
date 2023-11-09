@@ -2,6 +2,8 @@
 
 namespace Modules\Employer\Http\Controllers;
 
+use App\Models\Career;
+use App\Models\CompanyCareer;
 use Carbon\Carbon;
 use Hashids\Hashids;
 use Illuminate\Contracts\Support\Renderable;
@@ -17,11 +19,15 @@ class EmployerCompanyController extends Controller
     {
         $scale = (new Company())->scale;
         $working_time = (new Company())->working_time;
-
+        $careers = Career::all();
         $company = Company::where('c_employer_id', get_data_user('users'))->first();
+        $careersCompany = CompanyCareer::where('cc_company_id', $company->id ?? 0)->pluck('cc_careers_id')->toArray();
+
         $viewData = [
             'scale' => $scale,
+            'careers' => $careers,
             'company' => $company,
+            'careersCompany' => $careersCompany,
             'working_time' => $working_time
         ];
         return view('employer::company.index', $viewData);
@@ -40,6 +46,7 @@ class EmployerCompanyController extends Controller
         $company = Company::where('c_employer_id', get_data_user('users'))->first();
         if ($company) {
             $company->fill($data)->save();
+            $this->syncCareers($request->careers, $company->id);
             return redirect()->back();
         }
         $company = Company::create($data);
@@ -52,6 +59,28 @@ class EmployerCompanyController extends Controller
             $company->c_hash_slug = $hashID;
             $company->save();
         }
+        $this->syncCareers($request->careers, $company->id);
        return redirect()->back();
+    }
+
+    public function syncCareers($careers, $companyID)
+    {
+        if (!empty($careers))
+        {
+
+           try {
+               CompanyCareer::where('cc_company_id', $companyID)->delete();
+               foreach ($careers as $item)
+               {
+                   CompanyCareer::create([
+                       'cc_company_id' => $companyID,
+                       'cc_careers_id' => $item
+                   ]);
+               }
+           } catch (\Exception $exception) {
+
+           }
+        }
+
     }
 }

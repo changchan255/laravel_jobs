@@ -21,5 +21,10 @@ return [
         'icon' => 'work',
         'route' => 'get_admin.job.index'
     ],
+    [
+        'name' => 'Ứng viên',
+        'icon' => 'group',
+        'route' => 'get_admin.user.index'
+    ],
 
 ];

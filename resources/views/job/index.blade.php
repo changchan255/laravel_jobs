@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-header">
-                        <h3>Employer</h3>
+                        <h3>Tin tuyển dụng</h3>
                     </div>
                 </div>
             </div>
@@ -108,10 +108,10 @@
                         <div class="emply-list">
                             <div class="emply-list-thumb">
                                 <a href="{{ route('get.job',['slug' => $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="">
-                                    <img src="{{asset('assets/jobboard/images/resource/em1.jpg') }}" alt=""></a>
+                                    <img src="{{ pare_url_file($item->company->c_logo ?? '') }}" alt=""></a>
                             </div>
                             <div class="emply-list-info">
-                                <div class="emply-pstn">4 Open Position</div>
+                                <div class="emply-pstn">{{ $item->getAttributeJob->a_name ?? "[N/A]" }}</div>
                                 <h3><a href="{{ route('get.job',['slug' => $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="">{{ $item->j_name }}</a></h3>
                                 <span>{{ $item->company->c_name ?? "[N/A]"}}</span>
                                 <h6><i class="la la-map-marker"></i> {{ $item->j_address }}</h6>

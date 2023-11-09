@@ -100,6 +100,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
+/* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(toastr__WEBPACK_IMPORTED_MODULE_0__);
+
 var Favourite = {
   init: function init() {
     this.saveFavourite();
@@ -110,7 +113,17 @@ var Favourite = {
       var $this = $(this);
       var URL = $this.attr('data-url');
       console.log(URL);
-      console.log("init");
+      $.ajax({
+        url: URL,
+        type: 'GET',
+        success: function success(response) {
+          if (response.status === 200) {
+            toastr__WEBPACK_IMPORTED_MODULE_0__.success("Đã thêm vào yêu thích thành công");
+          }
+          console.log(data);
+        },
+        error: function error(response) {}
+      });
     });
   }
 };
@@ -10881,6 +10894,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/scss/pages/employer.scss":
+/*!********************************************!*\
+  !*** ./resources/scss/pages/employer.scss ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./node_modules/toastr/toastr.js":
 /*!***************************************!*\
   !*** ./node_modules/toastr/toastr.js ***!
@@ -11480,6 +11506,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/home": 0,
+/******/ 			"css/employer": 0,
 /******/ 			"css/home": 0
 /******/ 		};
 /******/ 		
@@ -11530,8 +11557,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/home"], () => (__webpack_require__("./resources/js/pages/home.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/home"], () => (__webpack_require__("./resources/scss/pages/home.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/employer","css/home"], () => (__webpack_require__("./resources/js/pages/home.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/employer","css/home"], () => (__webpack_require__("./resources/scss/pages/home.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/employer","css/home"], () => (__webpack_require__("./resources/scss/pages/employer.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

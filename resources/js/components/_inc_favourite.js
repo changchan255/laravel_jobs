@@ -1,3 +1,4 @@
+import * as Toastr from 'toastr';
 var Favourite = {
     init : function()
     {
@@ -11,7 +12,20 @@ var Favourite = {
             let $this = $(this)
             let URL = $this.attr('data-url')
             console.log(URL)
-            console.log("init")
+            $.ajax({
+                url: URL,
+                type:'GET',
+                success:function(response){
+                    if (response.status === 200)
+                    {
+                        Toastr.success("Đã thêm vào yêu thích thành công")
+                    }
+                    console.log(data)
+                },
+                error: function (response) {
+
+                }
+            });
         })
     }
 }

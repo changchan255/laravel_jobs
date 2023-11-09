@@ -26,11 +26,13 @@
                     @foreach($careers as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
-                        <td></td>
+                        <td>
+                           <img src="{{ pare_url_file($item->c_avatar) }}" alt="" style="width: 60px;">
+                        </td>
                         <td>{{ $item->c_name }}</td>
                         <td>{{ $item->created_at }}</td>
                         <td>
-                            <a href="" class="btn btn-sm btn-outline-primary">
+                            <a href="{{ route('get_admin.career.update', $item->id) }}" class="btn btn-sm btn-outline-primary">
                                 <i class="material-icons">edit</i></a>
                             <a href="" class="btn btn-sm btn-outline-primary">
                                 <i class="material-icons">delete</i></a>

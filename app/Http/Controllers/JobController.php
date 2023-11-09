@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Job;
 use Hashids\Hashids;
 use Illuminate\Http\Request;
@@ -15,12 +16,22 @@ class JobController extends Controller
         $idJob = array_pop($hashID);
         if(!$idJob) return abort(404);
 
-        $job = Job::with('career:id,c_name','company:id,c_name')->find($idJob);
+        $job = Job::with('career:id,c_name','company:id,c_name,c_logo,c_address')->find($idJob);
         if(!$job) return abort(404);
+
+        $company = Company::with('careers')->find($job->j_company_id);
+
+        $jobsSuggest = Job::where('j_career_id', $job->j_career_id)
+            ->orderByDesc('id')
+            ->Limit(10)
+            ->get();
 
         $viewData = [
             'job' => $job,
-            'hashIDJob' => $id
+            'hashIDJob' => $id,
+            'company' => $company,
+            'jobsSuggest' => $jobsSuggest
+
         ];
         return view('job_detail.index', $viewData);
     }

@@ -9,7 +9,7 @@ class SearchJobController extends Controller
 {
     public function index(Request $request)
     {
-        $jobs = Job::whereRaw(1);
+        $jobs = Job::with('company:id,c_name,c_logo')->whereRaw(1);
         if($title = $request->t)  // t = title
             $jobs->where('j_name', 'like', '%'.$title.'%');
         $jobs = $jobs->orderByDesc('id')
