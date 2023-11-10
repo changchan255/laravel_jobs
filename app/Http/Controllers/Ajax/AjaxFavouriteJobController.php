@@ -21,7 +21,7 @@ class AjaxFavouriteJobController extends Controller
                if(!$idJob) return respond([
                    'status' => 404
                ]);
-               JobFavourite::create([
+               \DB::table('job_favourite')->insert([
                    'jf_job_id' => $idJob,
                    'jf_user_id' => get_data_user('users')
                ]);

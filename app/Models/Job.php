@@ -60,4 +60,9 @@ class Job extends Model
         return $this->belongsTo(Company::class, 'j_company_id');
     }
 
+    public function favourites()
+    {
+        return $this->belongsToMany(User::class, 'job_favourite', 'jf_job_id', 'jf_user_id');
+    }
+
 }
