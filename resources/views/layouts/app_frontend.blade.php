@@ -18,6 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/jobboard/css/colors.css') }}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/jobboard/css/bootstrap.css') }}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     @yield('css')
 
 </head>
@@ -165,7 +166,7 @@
 
                 @if(get_data_user('users'))
                     <div class="btns-profiles-sec">
-                        <span><img src="http://127.0.0.1:8000/assets/jobboard/images/resource/profile.jpg" alt=""> Nguyễn Thu Trang <i class="la la-angle-down"></i></span>
+                        <span><img src="{{asset('assets/jobboard/images/resource/profile.jpg') }}" alt="">{{ get_data_user('users', 'name') }} <i class="la la-angle-down"></i></span>
                         <ul>
                             @foreach(config('user.drop_menu') as $item)
                             <li><a href="{{ route($item['route']) }}" title=""><i class="la la-file-text"></i>{{ $item['name'] }}</a></li>
@@ -223,6 +224,8 @@
 <script src="{{ asset('assets/jobboard/js/slick.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/jobboard/js/parallax.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/jobboard/js/select-chosen.js') }}" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
 
 </body>
 @yield('script')

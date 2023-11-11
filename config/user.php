@@ -12,7 +12,7 @@ return [
         [
             'title' => 'Danh sách ứng tuyển',
             'icon' => 'la la-file-text',
-            'route' => 'get_employer.company.index'
+            'route' => 'get_user.apply_job.index'
         ],
         [
             'title' => 'Danh sách yêu thích',

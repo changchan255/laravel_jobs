@@ -467,32 +467,32 @@ input[type="radio"] {
 label {
   position: relative;
   display: inline-block;
-  padding: 0 0 0 2em;
+  /*padding: 0 0 0 2em;*/
   margin-right: 10px;
   height: 1.5em;
   line-height: 1.5;
   cursor: pointer;
 }
-label::before,
-label::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 20px !important;
-  height: 20px !important;
-}
-label::before {
-  content: " ";
-  border: 2px solid #e6e7ef;
+/*label::before,*/
+/*label::after {*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  display: block;*/
+/*  width: 20px !important;*/
+/*  height: 20px !important;*/
+/*}*/
+/*label::before {*/
+/*  content: " ";*/
+/*  border: 2px solid #e6e7ef;*/
 
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
+/*  -webkit-border-radius: 3px;*/
+/*  -moz-border-radius: 3px;*/
+/*  -ms-border-radius: 3px;*/
+/*  -o-border-radius: 3px;*/
+/*  border-radius: 3px;*/
 
-}
+/*}*/
 /* Checkbox */
 input[type="checkbox"] + label::after {
   content: "\2714";
@@ -549,14 +549,14 @@ input[type=radio]:checked + label::after {
   transform: scale(1);
 }
 /* Transition */
-label::before,
-label::after {
-  -webkit-transition: .25s all ease;
-  -moz-transition: .25s all ease;
-  -ms-transition: .25s all ease;
-  -o-transition: .25s all ease;
-  transition: .25s all ease;
-}
+/*label::before,*/
+/*label::after {*/
+/*  -webkit-transition: .25s all ease;*/
+/*  -moz-transition: .25s all ease;*/
+/*  -ms-transition: .25s all ease;*/
+/*  -o-transition: .25s all ease;*/
+/*  transition: .25s all ease;*/
+/*}*/
 
 
 /* Main Slider Sec */
@@ -1566,6 +1566,7 @@ label::after {
 .job-list-modern .job-is.ft{
     color: #8b91dd;
     border-color: #8b91dd;
+    width: fit-content;
 }
 .job-is.pt,
 .job-list-modern .job-is.pt{

@@ -28,4 +28,8 @@ Route::prefix('employer')->group(function() {
 //        Route::get('create', 'EmployerCompanyController@create')->name('get_employer.company.create');
         Route::post('store', 'EmployerCompanyController@store')->name('get_employer.company.store');
     });
+    Route::prefix('apply-job')->group(function() {
+        Route::get('', 'EmployerApplyJobController@index')->name('get_employer.apply_job.index');
+        Route::get('delete/{id}', 'EmployerApplyJobController@delete')->name('get_employer.apply_job.delete');
+    });
 });

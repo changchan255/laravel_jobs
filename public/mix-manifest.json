@@ -2,5 +2,6 @@
     "/js/home.js": "/js/home.js",
     "/js/employer.js": "/js/employer.js",
     "/css/employer.css": "/css/employer.css",
+    "/css/job_detail.css": "/css/job_detail.css",
     "/css/home.css": "/css/home.css"
 }

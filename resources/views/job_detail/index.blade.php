@@ -1,4 +1,7 @@
 @extends('layouts.app_frontend')
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/job_detail.css ') }}"/>
+@stop
 @section('content')
     <section class="overlape">
         <div class="block no-padding">
@@ -23,7 +26,7 @@
                         <div class="job-single-sec style3">
                             <div class="job-head-wide">
                                 <div class="row">
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-8">
                                         <div class="job-single-head3 emplye">
                                             <div class="job-thumb"> <img src="{{ pare_url_file($job->company->c_logo ?? "") }}" alt=""></div>
                                             <div class="job-single-info3">
@@ -38,13 +41,14 @@
                                         </div>
                                         <!-- Job Head -->
                                     </div>
-                                    <div class="col-lg-2">
-                                        <div class="share-bar">
-                                            <a href="#" title="" class="share-google"><i class="la la-google"></i></a><a href="#" title="" class="share-fb"><i class="fa fa-facebook"></i></a><a href="#" title="" class="share-twitter"><i class="fa fa-twitter"></i></a>
-                                        </div>
+                                    <div class="col-lg-4">
+{{--                                        <div class="share-bar">--}}
+{{--                                            <a href="#" title="" class="share-google"><i class="la la-google"></i></a><a href="#" title="" class="share-fb"><i class="fa fa-facebook"></i></a><a href="#" title="" class="share-twitter"><i class="fa fa-twitter"></i></a>--}}
+{{--                                        </div>--}}
                                         <div class="emply-btns">
-                                            <a class="seemap" href="#" title=""><i class="la la-map-marker"></i> See On Map</a>
-                                            <a class="followus" href="#" title=""><i class="la la-paper-plane"></i> Follow us</a>
+                                            <a class="seemap js-apply-job" data-hash-slug ="{{ $job->j_hash_slug }}"
+                                               href="" title=""><i class="la la-paper-plane"></i>Ứng tuyển</a>
+{{--                                            <a class="followus" href="#" title=""><i class="la la-heart-o"></i>Theo dõi</a>--}}
                                         </div>
                                     </div>
                                 </div>
@@ -147,4 +151,9 @@
             </div>
         </div>
     </section>
+    @include('components.popup._inc_popup_apply_job')
+@stop
+
+@section('script')
+    <script src="{{ asset('js/home.js') }}"></script>
 @stop

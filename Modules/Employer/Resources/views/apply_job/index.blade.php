@@ -1,4 +1,4 @@
-@extends('user::layouts.app_user')
+@extends('employer::layouts.app_employer')
 @section('content')
     <section class="overlape">
         <div class="block no-padding">
@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="inner-header">
-                            <h3>Welcome Tera Planer</h3>
+                            <h3></h3>
                         </div>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
         <div class="block no-padding">
             <div class="container">
                 <div class="row no-gape">
-                    @include('user::components._inc_sidebar_user')
+                    @include('employer::components._inc_sidebar_employer')
                     <div class="col-lg-9 column">
                         <div class="padding-left">
                             <div class="manage-jobs-sec addscroll">
@@ -27,7 +27,9 @@
                                     <thead>
                                     <tr>
                                         <td>Tiêu đề</td>
-                                        <td>Ngày ứng tuyển</td>
+                                        <td>Họ tên</td>
+                                        <td>Số điện thoại</td>
+                                        <td>Ngày tạo</td>
                                         <td>Thao tác</td>
                                     </tr>
                                     </thead>
@@ -39,6 +41,12 @@
                                                     <h3><a href="" title="">{{ $item->job->j_name ?? "N/A" }}</a></h3>
                                                     <span><i class="la la-map-marker"></i>{{ $item->job-> j_address}}</span>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <span>{{ $item->aj_name }}</span><br>
+                                            </td>
+                                            <td>
+                                                <span>{{ $item->aj_phone }}</span><br>
                                             </td>
                                             <td>
                                                 <span>{{ $item->created_at }}</span><br>
@@ -62,4 +70,3 @@
     </section>
 
 @stop
-

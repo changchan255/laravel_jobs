@@ -1,0 +1,43 @@
+
+.blocker{
+    z-index: 15 !important;
+}
+.modal-md{
+    max-width: 600px;
+}
+.modal{
+    padding: 0;
+    a.close-modal{
+        position: absolute;
+        top: 2%;
+        z-index: 999;
+        right: 2%;
+        display: block;
+    }
+    &-header {
+        padding: 10px 25px;
+        border-bottom: 1px solid #e5e5e5;
+        border-radius: 8px 8px 0 0;
+        background: #fff;
+        width: 100%;
+        max-width: 500px;
+        .title{
+            font-weight: 600;
+            font-size: 18px;
+            margin: 0;
+            span{
+                color: #fb236a;
+                line-height: 1.5;
+            }
+        }
+    }
+    &-body{
+        position: relative;
+        padding: 15px;
+    }
+    &-footer{
+        padding: 10px 15px;
+        text-align: right;
+        border-top: 1px solid #e5e5e5;
+    }
+}

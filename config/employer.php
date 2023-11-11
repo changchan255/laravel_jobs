@@ -17,7 +17,7 @@ return [
         [
             'title' => 'Ứng tuyển',
             'icon' => 'la la-money',
-            'route' => ''
+            'route' => 'get_employer.apply_job.index'
         ],
         [
             'title' => 'Cập nhật mật khẩu',
