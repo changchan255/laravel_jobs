@@ -166,7 +166,8 @@
 
                 @if(get_data_user('users'))
                     <div class="btns-profiles-sec">
-                        <span><img src="{{asset('assets/jobboard/images/resource/profile.jpg') }}" alt="">{{ get_data_user('users', 'name') }} <i class="la la-angle-down"></i></span>
+                       <a href="{{ route('get_employer.job.index') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Nhà tuyển dụng</a>
+                        <span><img src="{{asset('assets/jobboard/images/resource/profile.jpg') }}" style="margin-left: 10px" alt="">{{ get_data_user('users', 'name') }} <i class="la la-angle-down"></i></span>
                         <ul>
                             @foreach(config('user.drop_menu') as $item)
                             <li><a href="{{ route($item['route']) }}" title=""><i class="la la-file-text"></i>{{ $item['name'] }}</a></li>
@@ -176,7 +177,6 @@
                     </div>
                 @else
                     <div class="btn-extars">
-                        <a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Đăng Tin</a>
                         <ul class="account-btns">
                             <li class="signup-popup"><a title=""><i class="la la-key"></i> Đăng ký</a></li>
                             <li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> Đăng nhập</a></li>

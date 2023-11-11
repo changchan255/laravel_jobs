@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('admin')->group(function() {
+Route::prefix('admin')->middleware('checkLoginAdmin')->group(function() {
     Route::get('/', 'AdminDashboardController@index')->name('get_admin.index');
     Route::prefix('career')->group(function () {
         Route::get('/', 'AdminCareerController@index')->name('get_admin.career.index');

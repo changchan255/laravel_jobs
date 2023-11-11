@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Ajax\AjaxApplyJobController;
 use App\Http\Controllers\Ajax\AjaxFavouriteJobController;
+use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\SearchJobController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +26,10 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'account'], function () {
     Route::post('login', [LoginController::class, 'postLogin'])->name('post.login');
     Route::post('register', [RegisterController::class, 'postRegister'])->name('post.register');
     Route::get('logout',[LoginController::class, 'getLogout'])->name('get.logout');
+
+    Route::get('admin-login', [AdminLoginController::class, 'getAdminLogin'])->name('get.admin_login');
+    Route::post('admin-login', [AdminLoginController::class, 'postAdminLogin']);
+    Route::get('admin-logout', [AdminLoginController::class, 'getAdminLogout'])->name('get.admin_logout');
 });
 Route::get('', [HomeController::class, 'index'])->name('get.home');
 Route::get('tim-kiem.html', [SearchJobController::class, 'index'])->name('get.search.job');

@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('employer')->group(function() {
+Route::prefix('employer')->middleware('checkLoginUser')->group(function() {
     Route::get('/', 'EmployerDashboardController@index');
     Route::get('job', 'EmployerJobController@index');
     Route::prefix('job')->group(function() {

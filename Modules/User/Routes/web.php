@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('user')->group(function() {
+Route::prefix('user')->middleware('checkLoginUser')->group(function() {
     Route::get('/', 'UserController@index');
     Route::get('favourite', 'UserJobFavouriteController@index')->name('get_user.job.favourite');
     Route::get('favourite/remove/{jobID}', 'UserJobFavouriteController@remove')->name('get_user.job.favourite_remove');

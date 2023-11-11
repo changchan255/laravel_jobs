@@ -17,6 +17,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+        try {
+            \DB::table('admins')->insert([
+                'name' => 'TranggNguyen',
+                'email' => 'thutrangg23252004@gmail.com',
+                'phone' => '0373762277',
+                'password' => \Hash::make('123456789')
+            ]);
+        }catch (\Exception $exception){
+            Log::error("[Seed Admin]". $exception->getMessage());
+        }
+
+        // Tao thuoc tinh cho bang Attributes
         $attributes = [
             Attribute::TYPE_EXPERIENCE => [
                 'Chưa có kinh nghiệm',
@@ -46,6 +59,7 @@ class DatabaseSeeder extends Seeder
             ]
         ];
 
+        // Dua du lieu cac thuoc tinh vao db
         foreach($attributes as $key => $attribute) {
            foreach($attribute as $item) {
                 try {
@@ -61,6 +75,7 @@ class DatabaseSeeder extends Seeder
                 }
            }
 
+           // Tao thuoc tinh cho bang Career
         }
         $careers = [
             'IT phần mềm',
@@ -73,6 +88,7 @@ class DatabaseSeeder extends Seeder
             'Marketing - PR',
         ];
 
+        // Dua du lieu cac thuoc tinh vao db
         foreach ($careers as $item)
         {
             try {

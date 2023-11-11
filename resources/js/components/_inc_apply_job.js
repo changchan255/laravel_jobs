@@ -19,7 +19,7 @@ var ApplyJob = {
                 clickClose: true,
                 showClose: true
             });
-            console.log(hashSlug)
+            $("#title-apply").text($this.attr('data-title'))
         })
     },
 
