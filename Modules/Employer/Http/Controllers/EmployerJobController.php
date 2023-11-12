@@ -2,6 +2,7 @@
 
 namespace Modules\Employer\Http\Controllers;
 
+use App\Models\ApplyJob;
 use App\Models\Attribute;
 use App\Models\Career;
 use App\Models\Company;
@@ -23,8 +24,14 @@ class EmployerJobController extends Controller
             ->orderByDesc('id')
             ->paginate(10);
 
+        $jobActive = Job::where('j_status', Job::STATUS_SUCCESS)->select('id')->count();
+
+        $applyJobCount = ApplyJob::where('aj_employer_id', get_data_user('users'))->select('id')->count();
+
         $viewData = [
-            'jobs' => $jobs
+            'jobs' => $jobs,
+            'jobActive' => $jobActive,
+            'applyJobCount' => $applyJobCount
         ];
         return view('employer::job.index', $viewData);
     }

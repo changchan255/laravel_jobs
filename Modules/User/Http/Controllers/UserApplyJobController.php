@@ -11,7 +11,7 @@ class UserApplyJobController extends Controller
 {
     public function index()
     {
-        $applyJobs = ApplyJob::with('job::id,j_name,j_hash_slug,j_address')->where('aj_user_id', get_data_user('users'))
+        $applyJobs = ApplyJob::with('job:id,j_name,j_hash_slug,j_address,j_slug')->where('aj_user_id', get_data_user('users'))
             ->orderByDesc('id')
             ->paginate(10);
 

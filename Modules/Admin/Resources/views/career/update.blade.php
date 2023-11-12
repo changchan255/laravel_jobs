@@ -17,39 +17,14 @@
                         <li class="list-group-item p-3">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
-                                    <form action="" method="POST" style="text-align: left" enctype="multipart/form-data">
-                                        @csrf
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail">Tên ngành nghề</label>
-                                            <input type="text" class="form-control"  value="{{ $career->c_name ?? '' }}" name="c_name">
-                                        </div>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                                            </div>
-                                            <div class="custom-file">
-                                                <input type="file" name="c_avatar" class="custom-file-input" id="inputGroupFile01"
-                                                       aria-describedby="inputGroupFileAddon01">
-                                                <label class="custom-file-label" for="inputGroupFile01">Chọn file từ máy tính</label>
-                                            </div>
-                                        </div>
-                                        @if(isset($career->c_avatar))
-                                            <img src="{{ pare_url_file($career->c_avatar) }}" style="width: 200px; height: auto" alt="">
-                                        @endif
-                                        <div class="form-row">
-                                            <div class="form-group col-md-5">
-                                                <button type="submit" class="mb-2 btn btn-primary">Xử lí</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    @include('admin::career.form')
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </div>
 @stop
-
-

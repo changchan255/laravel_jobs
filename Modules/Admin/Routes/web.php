@@ -21,6 +21,7 @@ Route::prefix('admin')->middleware('checkLoginAdmin')->group(function() {
         Route::post('create', 'AdminCareerController@store');
         Route::get('/update{id}', 'AdminCareerController@edit')->name('get_admin.career.update');
         Route::post('/update{id}', 'AdminCareerController@update');
+        Route::get('delete/{id}', 'AdminCareerController@delete')->name('get_admin.career.delete');
     });
     Route::prefix('attribute')->group(function () {
         Route::get('/', 'AdminAttributeController@index')->name('get_admin.attribute.index');

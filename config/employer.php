@@ -20,14 +20,9 @@ return [
             'route' => 'get_employer.apply_job.index'
         ],
         [
-            'title' => 'Cập nhật mật khẩu',
-            'icon' => 'la la-lock',
-            'route' => ''
-        ],
-        [
             'title' => 'Đăng xuất',
             'icon' => 'la la-unlink',
-            'route' => ''
+            'route' => 'get.logout'
         ]
     ]
     ];

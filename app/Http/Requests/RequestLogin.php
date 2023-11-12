@@ -19,10 +19,19 @@ class RequestLogin extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
+    public function rules()
     {
         return [
-            //
+            'email'     => 'required',
+            'password'  => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'Dữ liệu không được để trống',
+            'password.required' => 'Dữ liệu không được để trống',
         ];
     }
 }

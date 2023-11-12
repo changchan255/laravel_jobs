@@ -11,6 +11,9 @@
             <div class="card-header border-bottom">
                 <h6 class="m-0">Danh sách</h6>
             </div>
+            <div class="p-2">
+                <a href="{{ route('get_admin.career.create') }}" class="btn btn-info">Thêm ngành nghề</a>
+            </div>
             <div class="card-body p-0 pb-3 text-center">
                 <table class="table mb-0">
                     <thead class="bg-light">
@@ -34,8 +37,9 @@
                         <td>
                             <a href="{{ route('get_admin.career.update', $item->id) }}" class="btn btn-sm btn-outline-primary">
                                 <i class="material-icons">edit</i></a>
-                            <a href="" class="btn btn-sm btn-outline-primary">
-                                <i class="material-icons">delete</i></a>
+                            <a onclick="return confirm('Bạn có chắc muốn xóa?')" href="{{ route('get_admin.career.delete', $item->id) }}" class="btn btn-outline-primary btn-sm">
+                                <i class="material-icons">delete</i>
+                            </a>
                         </td>
                     </tr>
                     @endforeach

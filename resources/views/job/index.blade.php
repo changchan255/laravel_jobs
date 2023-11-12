@@ -103,22 +103,41 @@
                     <div class="alpha-pag">
                         <a href="#" title="" class="active">ALL</a><a href="#" title="">A</a><a href="#" title="">B</a><a href="#" title="">C</a><a href="#" title="">D</a><a href="#" title="">E</a><a href="#" title="">F</a><a href="#" title="">G</a><a href="#" title="">H</a><a href="#" title="">I</a><a href="#" title="">J</a><a href="#" title="">K</a><a href="#" title="">L</a><a href="#" title="">M</a><a href="#" title="">N</a><a href="#" title="">O</a><a href="#" title="">P</a><a href="#" title="">Q</a><a href="#" title="">R</a><a href="#" title="">S</a><a href="#" title="">T</a><a href="#" title="">U</a><a href="#" title="">V</a><a href="#" title="">W</a><a href="#" title="">X</a><a href="#" title="">Y</a><a href="#" title="">Z</a>
                     </div>
-                    <div class="emply-list-sec style2">
-                        @foreach($jobs ?? [] as $item)
-                        <div class="emply-list">
-                            <div class="emply-list-thumb">
-                                <a href="{{ route('get.job',['slug' => $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="">
-                                    <img src="{{ pare_url_file($item->company->c_logo ?? '') }}" alt=""></a>
-                            </div>
-                            <div class="emply-list-info">
-                                <div class="emply-pstn">{{ $item->getAttributeJob->a_name ?? "[N/A]" }}</div>
-                                <h3><a href="{{ route('get.job',['slug' => $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="">{{ $item->j_name }}</a></h3>
-                                <span>{{ $item->company->c_name ?? "[N/A]"}}</span>
-                                <h6><i class="la la-map-marker"></i> {{ $item->j_address }}</h6>
-                            </div>
-                        </div>
-                        @endforeach
+{{--                    <div class="emply-list-sec style2">--}}
+{{--                        @foreach($jobs ?? [] as $item)--}}
+{{--                        <div class="emply-list">--}}
+{{--                            <div class="emply-list-thumb">--}}
+{{--                                <a href="{{ route('get.job',['slug' => $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="">--}}
+{{--                                    <img src="{{ pare_url_file($item->company->c_logo ?? '') }}" alt=""></a>--}}
+{{--                            </div>--}}
+
+{{--                            <div class="emply-list-info">--}}
+{{--                                <h3><a href="{{ route('get.job',['slug' => $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="">{{ $item->j_name }}</a></h3>--}}
+{{--                                <span>{{ $item->company->c_name ?? "[N/A]"}}</span>--}}
+{{--                                <h6><i class="la la-map-marker"></i> {{ $item->j_address }}</h6>--}}
+{{--                                <div class="job-listing">--}}
+{{--                                    <span class="job-is ft" style="padding: 10px 10px">{{ $item->getAttributeJob->a_name ?? "[N/A]" }}</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        @endforeach--}}
                         <!-- Employe List -->
+                            <div class="job-listings-sec">
+                                @foreach($jobs ?? [] as $item)
+                                    <div class="job-listing">
+                                        <div class="job-title-sec">
+                                            <div class="c-logo"> <img
+                                                    src="{{ pare_url_file($item->company->c_logo ?? "") }}"
+                                                    alt=""/></div>
+                                            <h3><a href="{{ route('get.job',['slug' => $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="">{{ $item->j_name }}</a></h3>
+                                            <span>{{ $item->company->c_name ?? "[N/A]" }}</span>
+                                        </div>
+                                        <span class="job-lctn"><i class="la la-map-marker"></i>{{ $item->j_address }}</span>
+                                        <span class="fav-job {{ get_data_user('users') ? 'js-favourite' : 'js-login-message' }}" data-url="{{ route('ajax_get.add.favourite', $item->j_hash_slug) }}"><i class="la la-heart-o"></i></span>
+                                        <span class="job-is ft" style="padding: 10px 10px">{{ $item->getAttributeJob->a_name ?? "[N/A]" }}</span>
+                                    </div><!-- Job -->
+                                @endforeach
+                            </div>
                     </div>
                 </div>
             </div>

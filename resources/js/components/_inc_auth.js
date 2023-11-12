@@ -67,7 +67,7 @@ var Auth = {
                         location.reload();
                     }
                 },
-                error: function (data) {
+                error: function (response) {
                     if( response.status === 422 ) {
                         $.each(response.responseJSON.errors,function(field_name,error){
                             $(document).find('[name='+field_name+']').parent().after('<span class="text-error">' +error+ '</span>')

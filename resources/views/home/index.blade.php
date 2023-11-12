@@ -74,7 +74,7 @@
 								<div class="col-lg-3 col-md-3 col-sm-6">
 									<div class="p-category">
 										<a href="{{ route('get.career.index',['slug' => $item->c_slug]) }}" title="{{ $item->c_name }}">
-											<i class="la la-bullhorn"></i>
+                                            <img src="{{ pare_url_file($item->c_avatar) }}"  alt="" style="max-width: 100%; height: 80px; margin-top: 10px">
 											<span>{{ $item->c_name }}</span>
 											<p>(22 open positions)</p>
 										</a>
@@ -84,11 +84,6 @@
 							</div>
 						</div>
 						@endforeach
-					</div>
-					<div class="col-lg-12">
-						<div class="browse-all-cat">
-							<a href="#" title="">Xem tất cả các ngành nghề</a>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -133,14 +128,14 @@
 								</div>
 								<span class="job-lctn"><i class="la la-map-marker"></i>{{ $item->j_address }}</span>
 								<span class="fav-job {{ get_data_user('users') ? 'js-favourite' : 'js-login-message' }}" data-url="{{ route('ajax_get.add.favourite', $item->j_hash_slug) }}"><i class="la la-heart-o"></i></span>
-								<span class="job-is ft">{{ $item->getAttributeJob->a_name ?? "[N/A]" }}</span>
+								<span class="job-is ft" style="padding: 10px 10px">{{ $item->getAttributeJob->a_name ?? "[N/A]" }}</span>
 							</div><!-- Job -->
                             @endforeach
 						</div>
 					</div>
 					<div class="col-lg-12">
 						<div class="browse-all-cat">
-							<a href="#" title="">Load more listings</a>
+							<a href="{{ route('get.search.job') }}" title="">Xem thêm</a>
 						</div>
 					</div>
 				</div>
