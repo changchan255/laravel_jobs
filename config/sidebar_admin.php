@@ -26,5 +26,9 @@ return [
         'icon' => 'group',
         'route' => 'get_admin.user.index'
     ],
-
+    [
+        'name' => 'Ứng tuyển',
+        'icon' => 'contact_page',
+        'route' => 'get_admin.apply_job.index'
+    ],
 ];

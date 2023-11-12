@@ -11,6 +11,8 @@
 |
 */
 
+use Modules\Admin\Http\Controllers\AdminApplyJobController;
+
 Route::prefix('admin')->middleware('checkLoginAdmin')->group(function() {
     Route::get('/', 'AdminDashboardController@index')->name('get_admin.index');
     Route::prefix('career')->group(function () {
@@ -33,5 +35,9 @@ Route::prefix('admin')->middleware('checkLoginAdmin')->group(function() {
     });
     Route::prefix('employer')->group(function () {
         Route::get('/', 'AdminEmployerController@index')->name('get_admin.employer.index');
+    });
+    Route::prefix('apply-job')->group(function () {
+        Route::get('/', [AdminApplyJobController::class,'index'])->name('get_admin.apply_job.index');
+        Route::get('delete/{id}', 'AdminApplyJobController@delete')->name('get_admin.apply_job.delete');
     });
 });

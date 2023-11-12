@@ -16,4 +16,9 @@ Route::prefix('user')->middleware('checkLoginUser')->group(function() {
     Route::get('favourite', 'UserJobFavouriteController@index')->name('get_user.job.favourite');
     Route::get('favourite/remove/{jobID}', 'UserJobFavouriteController@remove')->name('get_user.job.favourite_remove');
     Route::get('apply-job', 'UserApplyJobController@index')->name('get_user.apply_job.index');
+    Route::get('info', 'UserInfoController@index')->name('get_user.user_info.index');
+    Route::post('info', 'UserInfoController@update');
+
+    Route::get('password', 'UserUpdatePasswordController@index')->name('get_user.update_password.index');
+    Route::post('password', 'UserUpdatePasswordController@update');
 });
