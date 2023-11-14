@@ -42,7 +42,7 @@
                                     <tr>
                                         <td>
                                             <div class="table-list-title">
-                                                <h3><a href="" title="">{{ $item->j_name }}</a></h3>
+                                                <h3><a href="{{ route('get.job',['slug'=> $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" target="_blank" title="{{ $item->j_name }}">{{ $item->j_name }}</a></h3>
                                                 <span><i class="la la-map-marker"></i>{{ $item-> j_address}}</span>
                                             </div>
                                         </td>

@@ -63,7 +63,7 @@
                 </aside>
                 <div class="col-lg-9 column">
                     <div class="filterbar">
-                        <p>Total of 145 Employer</p>
+                        <p>Có tổng cộng {{ $jobs->total() }} tin tuyển dụng</p>
                     </div>
                     <div class="emply-list-sec style2">
                         @foreach($jobs ?? [] as $item)

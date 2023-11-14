@@ -11,6 +11,7 @@ class HomeController extends Controller
 {
     public function index() {
         $jobsNew = Job::with('company:id,c_name,c_logo')->orderByDesc('id')
+            ->where('j_status', Job::STATUS_SUCCESS)
             ->limit(10)
             ->get(['id', 'j_name', 'j_address', 'j_slug','j_hash_slug', 'j_company_id', 'j_form_of_work_id']);
 

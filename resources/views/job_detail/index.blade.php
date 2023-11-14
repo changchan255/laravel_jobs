@@ -31,11 +31,11 @@
                                             <div class="job-thumb"> <img src="{{ pare_url_file($job->company->c_logo ?? "") }}" alt=""></div>
                                             <div class="job-single-info3">
                                                 <h3>{{ $job->j_name }}</h3>
-                                                <span><i class="la la-map-marker"></i>{{ $job->j_address }}</span><span class="job-is ft">{{ $job->getAttributeJob->a_name ?? "[N/A]" }}</span>
+                                                <span><i class="la la-map-marker"></i>{{ $job->j_address }}</span><span class="job-is ft" style="padding: 10px 10px">{{ $job->getAttributeJob->a_name ?? "[N/A]" }}</span>
                                                 <ul class="tags-jobs">
 {{--                                                    <li><i class="la la-file-text"></i> Applications 1</li>--}}
                                                     <li><i class="la la-calendar-o"></i> Deadline: {{ $job->j_time }}</li>
-                                                    <li><i class="la la-eye"></i>Views: {{ $job->j_view }}</li>
+                                                    <li><i class="la la-eye"></i>Lượt xem: {{ $job->j_view }}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -100,7 +100,7 @@
                                                 <li>
                                                     <i class="la la-map"></i>
                                                     <h3>Địa chỉ</h3>
-                                                    <span>{{ $job->company->c_address  }}</span>
+                                                    <span>{{ $job->company->c_address ?? "[N/A]" }}</span>
                                                 </li>
                                                 <li>
                                                     <i class="la la-bars"></i>

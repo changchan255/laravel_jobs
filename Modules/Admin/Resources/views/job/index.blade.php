@@ -45,6 +45,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                {!! $jobs->links('vendor.pagination.bootstrap-4') !!}
             </div>
         </div>
     </div>

@@ -147,6 +147,9 @@ header {
     position: relative;
 }
 
+.text-collapse.active {
+    color: #fb236a!important;
+}
 
 /* Theme Layout */
 .theme-layout{

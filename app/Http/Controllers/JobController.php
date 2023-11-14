@@ -16,7 +16,9 @@ class JobController extends Controller
         $idJob = array_pop($hashID);
         if(!$idJob) return abort(404);
 
-        $job = Job::with('career:id,c_name','company:id,c_name,c_logo,c_address')->find($idJob);
+        $job = Job::with('career:id,c_name','company:id,c_name,c_logo,c_address')
+            ->where('j_status', Job::STATUS_SUCCESS)
+            ->find($idJob);
         if(!$job) return abort(404);
 
         $company = Company::with('careers')->find($job->j_company_id);
