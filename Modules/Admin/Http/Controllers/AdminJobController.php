@@ -9,16 +9,20 @@ use Illuminate\Routing\Controller;
 
 class AdminJobController extends Controller
 {
-   public function index()
-   {
-       $jobs = Job::with('career:id,c_name')->orderByDesc('id')
-           ->paginate(10);
-
-       $viewData = [
-           'jobs' => $jobs
-       ];
-       return view('admin::job.index', $viewData);
-   }
+    public function index(Request $request)
+    {
+        $jobs = Job::with('career:id,c_name');
+        //Tìm kiếm công việc
+        if($n = $request->n)
+            $jobs->where('j_name', 'like','%'.$n.'%');
+        $jobs = $jobs->orderByDesc('id')
+            ->paginate('10');
+        $viewData = [
+            'jobs' => $jobs,
+            'query' => $request->query()
+        ];
+        return view('admin::job.index', $viewData);
+    }
 
    public function edit($id)
    {

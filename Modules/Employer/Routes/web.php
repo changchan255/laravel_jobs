@@ -31,5 +31,9 @@ Route::prefix('employer')->middleware('checkLoginUser')->group(function() {
     Route::prefix('apply-job')->group(function() {
         Route::get('', 'EmployerApplyJobController@index')->name('get_employer.apply_job.index');
         Route::get('delete/{id}', 'EmployerApplyJobController@delete')->name('get_employer.apply_job.delete');
+        Route::get('success/{id}', 'EmployerApplyJobController@success')->name('get_employer.apply_job.success');
+        Route::get('cancel/{id}', 'EmployerApplyJobController@cancel')->name('get_employer.apply_job.cancel');
+        Route::get('note/{id}', 'EmployerApplyJobController@note')->name('get_employer.apply_job.note');
+        Route::post('note/{id}', 'EmployerApplyJobController@postNote');
     });
 });

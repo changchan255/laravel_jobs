@@ -12,6 +12,12 @@
                 <h6 class="m-0">Danh sách</h6>
             </div>
             <div class="card-body p-0 pb-3 text-center">
+                <div class="p-2">
+                    <form action="" class="form-inline">
+                        <input type="text" class="form-control" placeholder="Tiêu đề công việc" name="n" value="{{ Request::get('n') }}">
+                        <button type="submit" class="btn btn-success" style="margin-left: 5px">Tìm kiếm</button>
+                    </form>
+                </div>
                 <table class="table mb-0">
                     <thead class="bg-light">
                     <tr>
