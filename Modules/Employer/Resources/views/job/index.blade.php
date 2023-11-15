@@ -22,7 +22,7 @@
                 <div class="col-lg-9 column">
                     <div class="padding-left">
                         <div class="manage-jobs-sec addscroll">
-                            <h3>Danh sách job<a href="{{ route('get_employer.job.create') }}" class="btn btn-primary">Thêm mới job</a></h3>
+                            <h3>Danh sách tin tuyển dụng<a href="{{ route('get_employer.job.create') }}" class="btn btn-primary">Thêm mới job</a></h3>
                             <div class="extra-job-info">
                                 <span><i class="la la-clock-o"></i><strong>{{ $jobs->total() }}</strong>Tin tuyển dụng</span>
                                 <span><i class="la la-file-text"></i><strong{{ $jobActive }}</strong style="vertical-align: -webkit-baseline-middle;">Tin đã duyệt</span>

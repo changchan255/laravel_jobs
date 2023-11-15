@@ -26,8 +26,10 @@
 											</div>
 											<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
 												<div class="job-field">
-													<select data-placeholder="City, province or region" class="chosen-city name="l">
+													<select data-placeholder="Chọn địa điểm"
+                                                            class="chosen-city" name="l">
 														<option>Hà Nội </option>
+                                                        <option>Quảng Ninh</option>
 														<option>Hồ Chí Minh</option>
 														<option>Đà Nẵng</option>
 														<option>Cần Thơ</option>
@@ -42,9 +44,9 @@
 									</form>
 									<div class="or-browser">
 										<span>Từ khóa nổi bật</span>
-										<a href="#" title="">Kỹ sư phần mềm</a>
-										<a href="#" title="">Digital Marketing</a>
-										<a href="#" title="">Kế toán trưởng</a>
+										<a href="{{ route('get.search.job') }}" title="">Kỹ sư phần mềm</a>
+										<a href="{{ route('get.search.job') }}" title="">Digital Marketing</a>
+										<a href="{{ route('get.search.job') }}" title="">Kế toán trưởng</a>
 									</div>
 								</div>
 							</div>
@@ -98,8 +100,8 @@
 					<div class="col-lg-12">
 						<div class="simple-text-block">
 							<h3>Tạo ấn tượng với nhà tuyển dụng cùng CV Online</h3>
-							<span>Đăng ký theo dõi để nhận cập nhật về cơ hội việc làm mới và phù hợp nhất</span>
-							<a href="" title="">Đăng ký ngay</a>
+							<span>Đăng ký tài khoản để nhận cập nhật về cơ hội việc làm mới và phù hợp nhất</span>
+							<a class="signup-popup" title="">Đăng ký ngay</a>
 						</div>
 					</div>
 				</div>
@@ -221,73 +223,73 @@
 		</div>
 	</section>
 
-	<section>
-		<div class="block">
-			<div data-velocity="-.1" style="background: url({{asset('assets/jobboard/images/resource/parallax3.jpg') }}) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="heading">
-							<h2>Quick Career Tips</h2>
-							<span>Found by employers communicate directly with hiring managers and recruiters.</span>
-						</div><!-- Heading -->
-						<div class="blog-sec">
-							<div class="row">
-								<div class="col-lg-4">
-									<div class="my-blog">
-										<div class="blog-thumb">
-											<a href="#" title=""><img src="{{asset('assets/jobboard/images/resource/b1.jpg') }}" alt="" /></a>
-											<div class="blog-metas">
-												<a href="#" title="">March 29, 2017</a>
-												<a href="#" title="">0 Comments</a>
-											</div>
-										</div>
-										<div class="blog-details">
-											<h3><a href="#" title="">Attract More Attention Sales And Profits</a></h3>
-											<p>A job is a regular activity performed in exchange becoming an employee, volunteering, </p>
-											<a href="#" title="">Read More <i class="la la-long-arrow-right"></i></a>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="my-blog">
-										<div class="blog-thumb">
-                                                <a href="#" title=""><img src="{{asset('assets/jobboard/images/resource/b2.jpg') }}" alt="" /></a>
-											<div class="blog-metas">
-												<a href="#" title="">March 29, 2017</a>
-												<a href="#" title="">0 Comments</a>
-											</div>
-										</div>
-										<div class="blog-details">
-											<h3><a href="#" title="">11 Tips to Help You Get New Clients</a></h3>
-											<p>A job is a regular activity performed in exchange becoming an employee, volunteering, </p>
-											<a href="#" title="">Read More <i class="la la-long-arrow-right"></i></a>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="my-blog">
-										<div class="blog-thumb">
-											<a href="#" title=""><img src="{{asset('assets/jobboard/images/resource/b3.jpg') }}" alt="" /></a>
-											<div class="blog-metas">
-												<a href="#" title="">March 29, 2017</a>
-												<a href="#" title="">0 Comments</a>
-											</div>
-										</div>
-										<div class="blog-details">
-											<h3><a href="#" title="">An Overworked Newspaper Editor</a></h3>
-											<p>A job is a regular activity performed in exchange becoming an employee, volunteering, </p>
-											<a href="#" title="">Read More <i class="la la-long-arrow-right"></i></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+{{--	<section>--}}
+{{--		<div class="block">--}}
+{{--			<div data-velocity="-.1" style="background: url({{asset('assets/jobboard/images/resource/parallax3.jpg') }}) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->--}}
+{{--			<div class="container">--}}
+{{--				<div class="row">--}}
+{{--					<div class="col-lg-12">--}}
+{{--						<div class="heading">--}}
+{{--							<h2>Quick Career Tips</h2>--}}
+{{--							<span>Found by employers communicate directly with hiring managers and recruiters.</span>--}}
+{{--						</div><!-- Heading -->--}}
+{{--						<div class="blog-sec">--}}
+{{--							<div class="row">--}}
+{{--								<div class="col-lg-4">--}}
+{{--									<div class="my-blog">--}}
+{{--										<div class="blog-thumb">--}}
+{{--											<a href="#" title=""><img src="{{asset('assets/jobboard/images/resource/b1.jpg') }}" alt="" /></a>--}}
+{{--											<div class="blog-metas">--}}
+{{--												<a href="#" title="">March 29, 2017</a>--}}
+{{--												<a href="#" title="">0 Comments</a>--}}
+{{--											</div>--}}
+{{--										</div>--}}
+{{--										<div class="blog-details">--}}
+{{--											<h3><a href="#" title="">Attract More Attention Sales And Profits</a></h3>--}}
+{{--											<p>A job is a regular activity performed in exchange becoming an employee, volunteering, </p>--}}
+{{--											<a href="#" title="">Read More <i class="la la-long-arrow-right"></i></a>--}}
+{{--										</div>--}}
+{{--									</div>--}}
+{{--								</div>--}}
+{{--								<div class="col-lg-4">--}}
+{{--									<div class="my-blog">--}}
+{{--										<div class="blog-thumb">--}}
+{{--                                                <a href="#" title=""><img src="{{asset('assets/jobboard/images/resource/b2.jpg') }}" alt="" /></a>--}}
+{{--											<div class="blog-metas">--}}
+{{--												<a href="#" title="">March 29, 2017</a>--}}
+{{--												<a href="#" title="">0 Comments</a>--}}
+{{--											</div>--}}
+{{--										</div>--}}
+{{--										<div class="blog-details">--}}
+{{--											<h3><a href="#" title="">11 Tips to Help You Get New Clients</a></h3>--}}
+{{--											<p>A job is a regular activity performed in exchange becoming an employee, volunteering, </p>--}}
+{{--											<a href="#" title="">Read More <i class="la la-long-arrow-right"></i></a>--}}
+{{--										</div>--}}
+{{--									</div>--}}
+{{--								</div>--}}
+{{--								<div class="col-lg-4">--}}
+{{--									<div class="my-blog">--}}
+{{--										<div class="blog-thumb">--}}
+{{--											<a href="#" title=""><img src="{{asset('assets/jobboard/images/resource/b3.jpg') }}" alt="" /></a>--}}
+{{--											<div class="blog-metas">--}}
+{{--												<a href="#" title="">March 29, 2017</a>--}}
+{{--												<a href="#" title="">0 Comments</a>--}}
+{{--											</div>--}}
+{{--										</div>--}}
+{{--										<div class="blog-details">--}}
+{{--											<h3><a href="#" title="">An Overworked Newspaper Editor</a></h3>--}}
+{{--											<p>A job is a regular activity performed in exchange becoming an employee, volunteering, </p>--}}
+{{--											<a href="#" title="">Read More <i class="la la-long-arrow-right"></i></a>--}}
+{{--										</div>--}}
+{{--									</div>--}}
+{{--								</div>--}}
+{{--							</div>--}}
+{{--						</div>--}}
+{{--					</div>--}}
+{{--				</div>--}}
+{{--			</div>--}}
+{{--		</div>--}}
+{{--	</section>--}}
 
 	<section>
 		<div class="block no-padding">

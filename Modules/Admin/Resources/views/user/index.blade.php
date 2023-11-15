@@ -12,6 +12,12 @@
                 <h6 class="m-0">Danh sách</h6>
             </div>
             <div class="card-body p-0 pb-3 text-center">
+                <div class="p-2">
+                    <form action="{{ route('get_admin.user.index') }}" method="get" class="form-inline">
+                        <input type="text" class="form-control" placeholder="Tên ứng viên" name="search" value="{{ isset($query['search']) ? $query['search'] : '' }}">
+                        <button type="submit" value="search" class="btn btn-success" style="margin-left: 5px">Tìm kiếm</button>
+                    </form>
+                </div>
                 <table class="table mb-0">
                     <thead class="bg-light">
                     <tr>
@@ -38,8 +44,10 @@
                             <td>{{ $item->phone ?? "N/A"}}</td>
                             <td>{{ $item->created_at}}</td>
                             <td>
-                                <a href="" class="btn btn-sm btn-outline-primary">
-                                    <i class="material-icons">delete</i></a>
+                                <a onclick="return confirm('Bạn có chắc muốn xóa?')" href="{{ route('get_admin.user.delete', $item->id) }}"  class="btn btn-outline-primary btn-sm">
+                                    <i class="material-icons">delete</i>
+                                </a>
+
                             </td>
                         </tr>
                     @endforeach

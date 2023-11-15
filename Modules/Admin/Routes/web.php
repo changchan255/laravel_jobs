@@ -30,9 +30,11 @@ Route::prefix('admin')->middleware('checkLoginAdmin')->group(function() {
         Route::get('/', 'AdminJobController@index')->name('get_admin.job.index');
         Route::get('/update{id}', 'AdminJobController@edit')->name('get_admin.job.update');
         Route::post('/update{id}', 'AdminJobController@update');
+        Route::get('delete/{id}', 'AdminJobController@delete')->name('get_admin.job.delete');
     });
     Route::prefix('user')->group(function () {
         Route::get('/', 'AdminUserController@index')->name('get_admin.user.index');
+        Route::get('delete/{id}', 'AdminUserController@delete')->name('get_admin.user.delete');
     });
     Route::prefix('employer')->group(function () {
         Route::get('/', 'AdminEmployerController@index')->name('get_admin.employer.index');

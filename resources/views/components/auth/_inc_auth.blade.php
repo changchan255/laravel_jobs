@@ -32,7 +32,7 @@
 		<form action="{{ route('post.register') }}" method="POST" id="formRegister">
             @csrf
 			<div class="cfield">
-				<input type="text" placeholder="Name" name="name" />
+				<input type="text" placeholder="Họ tên" name="name" />
 				<i class="la la-user"></i>
 			</div>
 			<div class="cfield">
@@ -44,7 +44,7 @@
 				<i class="la la-key"></i>
 			</div>
 			<div class="cfield">
-				<input type="text" placeholder="Phone Number" name="phone" />
+				<input type="text" placeholder="Số điện thoại" name="phone" />
 				<i class="la la-phone"></i>
 			</div>
 			<button type="submit" class="js-register">Đăng ký</button>

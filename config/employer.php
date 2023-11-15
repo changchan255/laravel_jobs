@@ -10,13 +10,13 @@ return [
             'route' => 'get_employer.company.index'
         ],
         [
-            'title' => 'Danh sách job',
+            'title' => 'Tn tuyển dụng',
             'icon' => 'la la-briefcase',
             'route' => 'get_employer.job.index'
         ],
         [
             'title' => 'Ứng tuyển',
-            'icon' => 'la la-money',
+            'icon' => 'las la-user-tie',
             'route' => 'get_employer.apply_job.index'
         ],
         [

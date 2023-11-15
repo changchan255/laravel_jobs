@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="inner-header">
-                            <h3></h3>
+                            <h3>Ứng viên</h3>
                         </div>
                     </div>
                 </div>

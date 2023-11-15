@@ -44,8 +44,9 @@
                         <td>
                             <a href="{{ route('get_admin.job.update', $item->id) }}" class="btn btn-sm btn-outline-primary">
                                 <i class="material-icons">edit</i></a>
-                            <a href="" class="btn btn-sm btn-outline-primary">
-                                <i class="material-icons">delete</i></a>
+                            <a onclick="return confirm('Bạn có chắc muốn xóa?')" href="{{ route('get_admin.job.delete', $item->id) }}"  class="btn btn-outline-primary btn-sm deletebutton">
+                                <i class="material-icons">delete</i>
+                            </a>
                         </td>
                     </tr>
                     @endforeach

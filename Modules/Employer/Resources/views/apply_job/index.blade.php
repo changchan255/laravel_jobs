@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="inner-header">
-                            <h3>Danh sách ứng tuyển</h3>
+                            <h3>Nhà tuyển dụng</h3>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                         </div>
                         <div class="padding-left">
                             <div class="manage-jobs-sec addscroll">
-                                <h3>Danh sách</h3>
+                                <h3>Danh sách ứng tuyển</h3>
                                 <table>
                                     <thead>
                                     <tr>

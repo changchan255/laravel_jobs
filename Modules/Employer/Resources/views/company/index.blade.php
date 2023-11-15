@@ -10,7 +10,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="inner-header">
-							<h3>Cập nhật thông tin công ty</h3>
+							<h3>Nhà tuyển dụng</h3>
 						</div>
 					</div>
 				</div>

@@ -44,4 +44,10 @@ class AdminJobController extends Controller
         return redirect()->route('get_admin.job.index');
    }
 
+   public function delete($id) {
+       $job = Job::find($id);
+       if ($job) $job->delete();
+       return redirect()->back();
+   }
+
 }

@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="inner-header">
-                            <h3>Cập nhật thông tin tuyển dụng</h3>
+                            <h3>Nhà tuyển dụng</h3>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                     <div class="col-lg-9 column">
                         <div class="padding-left">
                             <div class="profile-title">
-                                <h3>Cập nhật</h3>
+                                <h3>Cập nhật thông tin tuyển dụng</h3>
                             </div>
                             <div class="profile-form-edit">
                                 @include('employer::job.form')

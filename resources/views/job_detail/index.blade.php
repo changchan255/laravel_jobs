@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="inner-header">
-                            <h3>Employer</h3>
+                            <h3>Tin tuyển dụng</h3>
                         </div>
                     </div>
                 </div>
