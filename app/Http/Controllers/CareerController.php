@@ -14,7 +14,7 @@ class CareerController extends Controller
         $career = Career::where('c_slug', $slug)->first();
         if(!$career) return abort(404);
 
-        $jobs = Job::with('company:id,c_name')->where([
+        $jobs = Job::with('company:id,c_name,c_logo')->where([
             'j_career_id' => $career->id,
             'j_status' => Job::STATUS_SUCCESS
         ])->whereRaw(1);
