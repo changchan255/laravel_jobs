@@ -157,10 +157,10 @@
                         <a href="{{ route('get.home') }}" title="">Trang chủ</a>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="" title="Việc làm">Việc làm</a>
+                        <a href="{{ route('get.search.job') }}" title="Việc làm">Việc làm</a>
                         <ul>
-                            <li><a href="" title="">Việc làm theo địa điểm</a></li>
-                            <li><a href="" title="">Việc làm nổi bật</a></li>
+                            <li><a href="{{ route('get.search.job') }}" title="">Việc làm theo địa điểm</a></li>
+                            <li><a href="{{ route('get.search.job') }}" title="">Việc làm nổi bật</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children">

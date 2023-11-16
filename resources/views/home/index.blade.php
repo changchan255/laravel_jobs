@@ -30,8 +30,10 @@
                                                             class="chosen-city" name="l">
 														<option>Hà Nội </option>
                                                         <option>Quảng Ninh</option>
+                                                        <option>Bắc Ninh</option>
+                                                        <option>Đà Nẵng</option>
 														<option>Hồ Chí Minh</option>
-														<option>Đà Nẵng</option>
+                                                        <option>Bình Dương</option>
 														<option>Cần Thơ</option>
 													</select>
 													<i class="la la-map-marker"></i>
@@ -78,7 +80,7 @@
 										<a href="{{ route('get.career.index',['slug' => $item->c_slug]) }}" title="{{ $item->c_name }}">
                                             <img src="{{ pare_url_file($item->c_avatar) }}"  alt="" style="max-width: 100%; height: 80px; margin-top: 10px">
 											<span>{{ $item->c_name }}</span>
-{{--											<p>{{ $item->c_total_job }}</p>--}}
+											<p>({{ $item->jobs()->count() }} vị trí đang tuyển)</p>
 										</a>
 									</div>
 								</div>
@@ -152,37 +154,38 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="heading light">
-							<h2>Kind Words From Happy Candidates</h2>
-							<span>What other people thought about the service provided by JobHunt</span>
+							<h2>Tiên phong trong nền tảng tìm kiếm việc làm</h2>
+							<span>JobHunt có những tính năng nào?</span>
 						</div><!-- Heading -->
 						<div class="reviews-sec" id="reviews-carousel">
 							<div class="col-lg-6">
 								<div class="reviews">
-									<img src="{{asset('assets/jobboard/images/resource/r1.jpg') }}" alt="" />
-									<h3>Augusta Silva <span>Web designer</span></h3>
-									<p>Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything!  Can’t quite believe the service</p>
+									<img src="{{asset('assets/jobboard/images/resource/find_job.png') }}" alt="" />
+									<h3>Tìm việc làm <span></span></h3>
+									<p>Với hơn 1 triệu + việc làm tại Việt Nam có trên trang web, Bạn có thể dễ dàng tìm kiếm việc làm mọi lúc, mọi nơi. Bạn có thể nhanh chóng ứng tuyển vào công ty hàng đầu có chế độ phúc lợi, môi trường làm việc tốt nhất.</p>
 								</div><!-- Reviews -->
 							</div>
 							<div class="col-lg-6">
 								<div class="reviews">
-									<img src="{{asset('assets/jobboard/images/resource/r2.jpg') }}" alt="" />
-									<h3>Ali Tufan <span>Web designer</span></h3>
-									<p>Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything!  Can’t quite believe the service</p>
+									<img src="{{asset('assets/jobboard/images/resource/resume.png') }}" alt="" />
+									<h3>Mẫu CV đẹp <span></span></h3>
+									<p>Để giữ cho đơn xin việc của bạn nhất quán và chuyên nghiệp, các mẫu CV xin việc của chúng tôi hoàn toàn phù hợp với các mẫu Sơ yếu lý lịch. Tạo và tải xuống Sơ yếu lý lịch chuyên nghiệp của bạn trong vòng chưa đầy 5 phút.</p>
 								</div><!-- Reviews -->
 							</div>
 							<div class="col-lg-6">
 								<div class="reviews">
-									<img src="{{asset('assets/jobboard/images/resource/r1.jpg') }}" alt="" />
-									<h3>Augusta Silva <span>Web designer</span></h3>
-									<p>Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything!  Can’t quite believe the service</p>
+									<img src="{{asset('assets/jobboard/images/resource/cover_letter.png') }}" alt="" />
+									<h3>Mẫu Cover letters <span></span></h3>
+									<p>Cho dù bạn ứng tuyển vào một ngành bảo thủ như ngân hàng hay một công ty khởi nghiệp cường điệu, bạn có thể điều chỉnh các mẫu thư xin việc của chúng tôi để phù hợp với nhu cầu chính xác của bạn.</p>
 								</div><!-- Reviews -->
 							</div>
-							<div class="col-lg-6">
-								<div class="reviews">
-									<img src="{{asset('assets/jobboard/images/resource/r2.jpg') }}" alt="" />
-									<h3>Ali Tufan <span>Web designer</span></h3>
-									<p>Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything!  Can’t quite believe the service</p>
-								</div><!-- Reviews -->
+                            <div class="col-lg-6">
+                                <div class="reviews">
+                                    <img src="{{asset('assets/jobboard/images/resource/find_job.png') }}" alt="" />
+                                    <h3>Tìm việc làm <span></span></h3>
+                                    <p>Với hơn 1 triệu + việc làm tại Việt Nam có trên trang web, Bạn có thể dễ dàng tìm kiếm việc làm mọi lúc, mọi nơi. Bạn có thể nhanh chóng ứng tuyển vào công ty hàng đầu có chế độ phúc lợi, môi trường làm việc tốt nhất.</p>
+                                </div><!-- Reviews -->
+                            </div>
 							</div>
 						</div>
 					</div>
@@ -197,8 +200,8 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="heading">
-							<h2>Companies We've Helped</h2>
-							<span>Some of the companies we've helped recruit excellent applicants over the years.</span>
+							<h2>Nhà tuyển dụng hàng đầu</h2>
+							<span>Bạn có vị trí cần tuyển dụng? Nền tảng của JobHunt sẽ giúp bạn kết nối với những ứng viên tiềm năng nhanh chóng!</span>
 						</div><!-- Heading -->
 						<div class="comp-sec">
 							<div class="company-img">
@@ -297,8 +300,8 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="simple-text">
-							<h3>Gat a question?</h3>
-							<span>We're here to help. Check out our FAQs, send us an email or call us at 1 (800) 555-5555</span>
+							<h3>Nếu bạn có bất kỳ câu hỏi nào</h3>
+							<span>Chúng tôi luôn sẵn sàng giúp đỡ! Liên hệ bằng email hoặc gọi ngay hotline +1 23-456-7890 để được hỗ trợ và tư vấn kịp thời.</span>
 						</div>
 					</div>
 				</div>

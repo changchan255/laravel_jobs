@@ -54,6 +54,13 @@
                                                            value="{{ old('address', $user->address ?? '') }}">
                                                 </div>
                                             </div>
+                                            <div class="col-lg-6">
+                                                <span class="pf-title">Avatar</span>
+                                                <div class="pf-field">
+                                                    <input type="file" class="form-control" name="logo">
+                                                </div>
+                                                <p>{{ $user->avatar ?? "" }}</p>
+                                            </div>
                                             <div class="col-lg-12 mb-2">
                                                 <button type="submit">Cập nhật thông tin</button>
                                             </div>

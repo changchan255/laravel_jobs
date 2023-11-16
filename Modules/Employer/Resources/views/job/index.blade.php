@@ -25,7 +25,7 @@
                             <h3>Danh sách tin tuyển dụng<a href="{{ route('get_employer.job.create') }}" class="btn btn-primary">Thêm mới job</a></h3>
                             <div class="extra-job-info">
                                 <span><i class="la la-clock-o"></i><strong>{{ $jobs->total() }}</strong>Tin tuyển dụng</span>
-                                <span><i class="la la-file-text"></i><strong{{ $jobActive }}</strong style="vertical-align: -webkit-baseline-middle;">Tin đã duyệt</span>
+                                <span><i class="la la-file-text"></i><strong>{{ $jobActive }}</strong>Tin đã duyệt</span>
                                 <span><i class="la la-users"></i><strong>{{ $applyJobCount }}</strong>Ứng viên</span>
                             </div>
                             <table>

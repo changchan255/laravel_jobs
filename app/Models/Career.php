@@ -35,4 +35,9 @@ class Career extends Model
     protected $guarded = [''];
     protected $table = 'careers';
     const HOT = 1;
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class, 'j_career_id', 'id');
+    }
 }

@@ -28,6 +28,8 @@
                                     <tr>
                                         <td>Tiêu đề</td>
                                         <td>Ngày ứng tuyển</td>
+                                        <td>Trạng Thái</td>
+                                        <td style="width: 200px; text-align: center;">Đánh giá</td>
                                         <td>Thao tác</td>
                                     </tr>
                                     </thead>
@@ -44,9 +46,15 @@
                                                 <span>{{ $item->created_at }}</span><br>
                                             </td>
                                             <td>
+                                                <span class="status active">{{ $item->getApply($item->aj_apply)['name'] }}</span>
+                                            </td>
+                                            <td>
+                                                <span style="color: #007bff;font-size: 15px">{{$item->aj_note}}</span><br>
+                                            </td>
+                                            <td>
                                                 <ul class="action_job">
-                                                    <li><span>Delete</span>
-                                                        <a href="{{ route('get_employer.apply_job.delete', $item->id) }}" title=""><i class="la la-trash-o"></i></a></li>
+                                                    <li><span>Xóa</span>
+                                                        <a href="{{ route('get_user.apply_job.delete', $item->id) }}" title=""><i class="la la-trash-o"></i></a></li>
                                                 </ul>
                                             </td>
                                         </tr>

@@ -13,7 +13,7 @@
         <div class="col-lg-12">
             <span class="pf-title">Địa chỉ<span class="red_w">*</span></span>
             <div class="pf-field">
-                <input type="text" placeholder="Designer" name="j_address" value="{{ old('j_address', $job->j_address ?? '') }}">
+                <input type="text" placeholder="Cầu Giấy,Hà Nội" name="j_address" value="{{ old('j_address', $job->j_address ?? '') }}">
             </div>
             @if($errors->has('j_address'))
                 <span class="text-danger" style="color: red !important;font-size: 13px">{{ $errors->first('j_address') }}</span>
@@ -31,7 +31,7 @@
         <div class="col-lg-6">
             <span class="pf-title">Ngành nghề<span class="red_w">*</span></span>
             <div class="pf-field">
-                <select name="j_career_id" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
+                <select name="j_career_id" data-placeholder="Chọn ngành nghề" class="chosen" style="display: none;">
                     <option value="">Chọn ngành nghề</option>
                     @foreach($careers as $item)
                         <option value="{{ $item->id }}"
@@ -46,7 +46,7 @@
         <div class="col-lg-6">
             <span class="pf-title">Kinh nghiệm<span class="red_w">*</span></span>
             <div class="pf-field">
-                <select name="j_experience_id" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
+                <select name="j_experience_id" data-placeholder="Chọn kinh nghiệm" class="chosen" style="display: none;">
                     <option value="">Chọn kinh nghiệm</option>
                     @foreach($experience as $item)
                         <option value="{{ $item->id }}"
@@ -61,7 +61,7 @@
         <div class="col-lg-6">
             <span class="pf-title">Làm thêm giờ (Overtime)</span>
             <div class="pf-field">
-                <select name="j_ot" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
+                <select name="j_ot" data-placeholder="Chọn làm thêm giờ" class="chosen" style="display: none;">
                     <option value="1" {{ old('j_ot', ($job->j_ot ?? 0)) == 1 ? "selected" : "" }}>Không</option>
                     <option value="2" {{ old('j_ot', ($job->j_ot ?? 0)) == 2 ? "selected" : "" }}>Có</option>
                 </select>
@@ -70,7 +70,7 @@
         <div class="col-lg-6">
             <span class="pf-title">Cấp bậc<span class="red_w">*</span></span>
             <div class="pf-field">
-                <select name="j_rank_id" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
+                <select name="j_rank_id" data-placeholder="Chọn cấp bậc" class="chosen" style="display: none;">
                     <option value="">Chọn cấp bậc</option>
                     @foreach($ranks as $item)
                         <option value="{{ $item->id }}"
@@ -85,7 +85,7 @@
         <div class="col-lg-6">
         <span class="pf-title">Loại hình làm việc<span class="red_w">*</span></span>
         <div class="pf-field">
-            <select name="j_form_of_work_id" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
+            <select name="j_form_of_work_id" data-placeholder="Chọn loại hình làm việc" class="chosen" style="display: none;">
                 <option value="">Chọn loại hình</option>
                 @foreach($formOfWork as $item)
                     <option value="{{ $item->id }}"

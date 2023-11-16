@@ -58,9 +58,9 @@
                                         @endif
                                     </div>
                                         <div class="col-lg-6">
-                                            <span class="pf-title">Ngành nghề</span>
+                                            <span class="pf-title">Lĩnh vực hoạt động</span>
                                             <div class="pf-field">
-                                                <select name="careers[]" data-placeholder="Please Select Specialism" class="chosen js-run-select2"
+                                                <select name="careers[]" data-placeholder="Chọn ngành nghề" class="chosen js-run-select2"
                                                         style="display: none;" multiple="multiple">
                                                     @foreach($careers as $item)
                                                         <option value="{{ $item->id }}" {{ in_array($item->id, $careersCompany) ? "selected" : "" }}>{{ $item->c_name }}</option>
@@ -106,7 +106,7 @@
                                         <div class="col-lg-6">
                                             <span class="pf-title">Thời gian làm việc</span>
                                             <div class="pf-field">
-                                                <select name="c_working_time" data-placeholder="Please Select Specialism" class="chosen" style="display: none;">
+                                                <select name="c_working_time" data-placeholder="Chọn thời gian làm việc" class="chosen" style="display: none;">
                                                     @foreach($working_time as $key => $item)
                                                         <option value="{{ $key }}" {{ ($company->c_working_time ?? 0) == $key ? "selected" : "" }}>{{ $item }}</option>
                                                     @endforeach

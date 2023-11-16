@@ -3,6 +3,11 @@
 return [
     'drop_menu' => [
         [
+            'name' => 'Cập nhật thông tin',
+            'icon' => 'la la-user',
+            'route' => 'get_user.user_info.index'
+        ],
+        [
             'name' => 'Danh sách ứng tuyển',
             'icon' => 'la la-file-text',
             'route' => 'get_user.apply_job.index'
