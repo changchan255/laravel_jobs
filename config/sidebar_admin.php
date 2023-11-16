@@ -17,6 +17,11 @@ return [
         'route' => 'get_admin.attribute.index'
     ],
     [
+        'name' => 'Nhà tuyển dụng',
+        'icon' => 'corporate_fare',
+        'route' => 'get_admin.company.index'
+    ],
+    [
         'name' => 'Jobs',
         'icon' => 'work',
         'route' => 'get_admin.job.index'
@@ -31,4 +36,5 @@ return [
         'icon' => 'contact_page',
         'route' => 'get_admin.apply_job.index'
     ],
+
 ];

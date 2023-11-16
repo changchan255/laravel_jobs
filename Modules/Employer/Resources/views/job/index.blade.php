@@ -55,9 +55,9 @@
                                         </td>
                                         <td>
                                             <ul class="action_job">
-                                                <li><span>View Job</span><a href="" title=""><i class="la la-eye"></i></a></li>
-                                                <li><span>Edit</span><a href="{{ route('get_employer.job.update', $item->id) }}" title=""><i class="la la-pencil"></i></a></li>
-                                                <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
+                                                <li><span>Xem</span><a href="" title=""><i class="la la-eye"></i></a></li>
+                                                <li><span>Chỉnh sửa</span><a href="{{ route('get_employer.job.update', $item->id) }}" title=""><i class="la la-pencil"></i></a></li>
+                                                <li><span>Xoá</span><a href="{{ route('get_employer.job.delete', $item->id) }}}" title=""><i class="la la-trash-o"></i></a></li>
                                             </ul>
                                         </td>
                                     </tr>

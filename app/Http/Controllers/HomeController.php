@@ -19,7 +19,8 @@ class HomeController extends Controller
         ->limit(8)
         ->orderByDesc('id')
         ->get();
-    $viewData = [
+
+        $viewData = [
         'jobsNew' => $jobsNew,
         'careersHot' => $careersHot
     ];

@@ -1,4 +1,7 @@
 @extends('layouts.app_frontend')
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
+@stop
 @section('content')
 <section class="overlape">
     <div class="block no-padding">
@@ -65,48 +68,54 @@
                     <div class="filterbar">
                         <p>Có tổng cộng {{ $jobs->total() }} tin tuyển dụng</p>
                     </div>
-                    <div class="emply-list-sec style2">
-                        @foreach($jobs ?? [] as $item)
-                            <div class="emply-list">
-                                <div class="emply-list-thumb">
-                                    <a href="{{ route('get.job',['slug'=> $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="{{ $item->j_name }}">
-                                        <img src="{{ pare_url_file($item->company->c_logo ?? '') }}" alt="{{ $item->j_name }}">
-                                    </a>
-                                </div>
-                                <div class="emply-list-info">
-                                    <div class="emply-pstn">{{ $item->getAttributeJob->a_name ?? "[N\A]" }}</div>
-                                    <h3><a href="{{ route('get.job',['slug'=> $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="{{ $item->j_name }}">{{ $item->j_name }}</a></h3>
-                                    <span>{{ $item->company->c_name ?? "[N/A]" }}</span>
-                                    <h6><i class="la la-map-marker"></i> {{ $item->j_address }}</h6>
-                                </div>
-                            </div>
-                        @endforeach
-                            {!! $jobs->appends($query ?? [])->links() !!}
-                        <!-- Employe List -->
-
-                    </div>
-{{--                    <div class="job-listings-sec">--}}
+{{--                    <div class="emply-list-sec style2">--}}
 {{--                        @foreach($jobs ?? [] as $item)--}}
-{{--                            <div class="job-listing wtabs">--}}
-{{--                                <div class="job-title-sec">--}}
-{{--                                    <div class="c-logo"> <img src="{{ pare_url_file($item->company->c_logo ?? '') }}" alt=""> </div>--}}
-{{--                                    <h3><a href="{{ route('get.job',['slug' => $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="">{{ $item->j_name }}</a></h3>--}}
-{{--                                    <span>{{ $item->company->c_name ?? "[N/A]"}}</span>--}}
-{{--                                    <div class="job-lctn"><i class="la la-map-marker"></i>{{ $item->j_address }}</div>--}}
+{{--                            <div class="emply-list">--}}
+{{--                                <div class="emply-list-thumb">--}}
+{{--                                    <a href="{{ route('get.job',['slug'=> $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="{{ $item->j_name }}">--}}
+{{--                                        <img src="{{ pare_url_file($item->company->c_logo ?? '') }}" alt="{{ $item->j_name }}">--}}
+{{--                                    </a>--}}
 {{--                                </div>--}}
-{{--                                <div class="job-style-bx">--}}
-{{--                                    <span class="job-is ft">{{ $item->getAttributeJob->a_name ?? "[N/A]" }}</span>--}}
-{{--                                    <span class="fav-job {{ get_data_user('users') ? 'js-favourite' : 'js-login-message' }}" data-url="{{ route('ajax_get.add.favourite', $item->j_hash_slug) }}"><i class="la la-heart-o"></i></span>--}}
-{{--                                    <i>5 months ago</i>--}}
+{{--                                <div class="emply-list-info">--}}
+{{--                                    <div class="emply-pstn">{{ $item->getAttributeJob->a_name ?? "[N\A]" }}</div>--}}
+{{--                                    <h3><a href="{{ route('get.job',['slug'=> $item->j_slug, 'hashID' => $item->j_hash_slug]) }}" title="{{ $item->j_name }}">{{ $item->j_name }}</a></h3>--}}
+{{--                                    <span>{{ $item->company->c_name ?? "[N/A]" }}</span>--}}
+{{--                                    <h6><i class="la la-map-marker"></i> {{ $item->j_address }}</h6>--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
 {{--                        @endforeach--}}
-{{--                    </div>--}}
+
+                    <div class="job-list-modern">
+                        <div class="job-listings-sec no-border">
+                            @foreach($jobs as $item)
+                                <div class="job-listing wtabs">
+                                    <div class="job-title-sec">
+                                        <div class="c-logo"> <img src="{{ pare_url_file($item->company->c_logo ?? '') }}" alt=""> </div>
+                                        <h3><a href="{{ route('get.job',['slug' => $item->j_slug, 'hashID' => $item->j_hash_slug]) }}"
+                                               title="">{{ $item->j_name }}</a></h3>
+                                        <span>{{ $item->company->c_name ?? "[N/A]"}}</span>
+                                        <div class="job-lctn"><i class="la la-map-marker"></i>{{ $item->j_address }}</div>
+                                    </div>
+                                    <div class="job-style-bx">
+                                        <span class="job-is ft">{{ $item->getAttributeJob->a_name ?? "[N/A]" }}</span>
+                                        <span class="fav-job {{ get_data_user('users') ? 'js-favourite' : 'js-login-message' }}" data-url="{{ route('ajax_get.add.favourite', $item->j_hash_slug) }}"><i class="la la-heart-o"></i></span>
+                                        <i>{{ $item->created_at->diffForHumans() }}</i>
+                                    </div>
+                                </div>
+                            @endforeach
+                        <!-- Employe List -->
+                                {!! $jobs->appends($query ?? [])->links('vendor.pagination.bootstrap-4') !!}
+                        </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 
 
 @stop
+@section('script')
+    <script src="{{ asset('js/home.js') }}"></script>
+@stop
+

@@ -21,6 +21,7 @@ Route::prefix('employer')->middleware('checkLoginUser')->group(function() {
 
         Route::get('update/{id}','EmployerJobController@edit')->name('get_employer.job.update');
         Route::post('update/{id}','EmployerJobController@update');
+        Route::get('delete/{id}', 'EmployerJobController@delete')->name('get_employer.job.delete');
     });
 
     Route::prefix('company')->group(function() {

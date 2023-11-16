@@ -78,7 +78,7 @@
 										<a href="{{ route('get.career.index',['slug' => $item->c_slug]) }}" title="{{ $item->c_name }}">
                                             <img src="{{ pare_url_file($item->c_avatar) }}"  alt="" style="max-width: 100%; height: 80px; margin-top: 10px">
 											<span>{{ $item->c_name }}</span>
-											<p>(22 open positions)</p>
+{{--											<p>{{ $item->c_total_job }}</p>--}}
 										</a>
 									</div>
 								</div>

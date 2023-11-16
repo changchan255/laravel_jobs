@@ -35,7 +35,7 @@
                                                 <ul class="tags-jobs">
 {{--                                                    <li><i class="la la-file-text"></i> Applications 1</li>--}}
                                                     <li><i class="la la-calendar-o"></i> Deadline: {{ $job->j_time }}</li>
-                                                    <li><i class="la la-eye"></i>Lượt xem: {{ $job->j_view }}</li>
+{{--                                                    <li><i class="la la-eye"></i>Lượt xem: {{ $job->j_view }}</li>--}}
                                                 </ul>
                                             </div>
                                         </div>
@@ -47,8 +47,8 @@
 {{--                                        </div>--}}
                                         <div class="emply-btns">
                                             <a class="seemap js-apply-job" data-hash-slug ="{{ $job->j_hash_slug }}" data-title="{{ $job->j_name }}"
-                                               href="" title=""><i class="la la-paper-plane"></i>Ứng tuyển</a>
-{{--                                            <a class="followus" href="#" title=""><i class="la la-heart-o"></i>Theo dõi</a>--}}
+                                               href="" title=""><i class="la la-paper-plane"></i> Ứng tuyển</a>
+                                            <a class="followus {{ get_data_user('users') ? 'js-favourite' : 'js-login-message' }}" data-url="{{ route('ajax_get.add.favourite', $job->j_hash_slug) }} "title=""><i class="la la-heart-o"></i> Yêu thích</a>
                                         </div>
                                     </div>
                                 </div>
@@ -113,11 +113,11 @@
                                                     </span>
                                                     @endif
                                                 </li>
-{{--                                                <li>--}}
-{{--                                                    <i class="la la-clock-o"></i>--}}
-{{--                                                    <h3>Since</h3>--}}
-{{--                                                    <span>2002</span>--}}
-{{--                                                </li>--}}
+                                                <li>
+                                                    <i class="la la-file-text"></i>
+                                                    <h3>Mô tả</h3>
+                                                    <span>{{ $job->company->c_about ?? "Đang cập nhật"}}</span>
+                                                </li>
 {{--                                                <li>--}}
 {{--                                                    <i class="la la-users"></i>--}}
 {{--                                                    <h3>Team Size</h3>--}}

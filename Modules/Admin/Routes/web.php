@@ -43,4 +43,8 @@ Route::prefix('admin')->middleware('checkLoginAdmin')->group(function() {
         Route::get('/', [AdminApplyJobController::class,'index'])->name('get_admin.apply_job.index');
         Route::get('delete/{id}', 'AdminApplyJobController@delete')->name('get_admin.apply_job.delete');
     });
+    Route::prefix('company')->group(function () {
+        Route::get('/', 'AdminCompanyController@index')->name('get_admin.company.index');
+        Route::get('delete/{id}', 'AdminCompanyController@delete')->name('get_admin.company.delete');
+    });
 });

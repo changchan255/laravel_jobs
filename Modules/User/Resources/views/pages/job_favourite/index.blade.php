@@ -27,8 +27,8 @@
                                     <thead>
                                     <tr>
                                         <td>Tiêu đề</td>
-                                        <td>Thời gian tạo &amp; Hạn nộp hồ sơ</td>
-                                        <td>Trạng thái</td>
+{{--                                        <td>Thời gian tạo &amp; Hạn nộp hồ sơ</td>--}}
+{{--                                        <td>Trạng thái</td>--}}
                                         <td>Thao tác</td>
                                     </tr>
                                     </thead>
@@ -41,13 +41,13 @@
                                                     <span><i class="la la-map-marker"></i>{{ $item-> j_address}}</span>
                                                 </div>
                                             </td>
-                                            <td>
-                                                <span>{{ $item->created_at }}</span><br>
-                                                <span>{{ $item->j_time }}</span>
-                                            </td>
-                                            <td>
-                                                <span class="status active">{{ $item->getStatus($item->j_status)['name'] }}</span>
-                                            </td>
+{{--                                            <td>--}}
+{{--                                                <span>{{ $item->created_at }}</span><br>--}}
+{{--                                                <span>{{ $item->j_time }}</span>--}}
+{{--                                            </td>--}}
+{{--                                            <td>--}}
+{{--                                                <span class="status active">{{ $item->getStatus($item->j_status)['name'] }}</span>--}}
+{{--                                            </td>--}}
                                             <td>
                                                 <ul class="action_job">
                                                     <li><span>Hủy bỏ</span><a href="{{ route('get_user.job.favourite_remove', $item->id) }}" title=""><i class="la la-trash-o"></i></a></li>

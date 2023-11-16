@@ -111,4 +111,10 @@ class EmployerJobController extends Controller
 
         return redirect()->back();
     }
+
+    public function delete($id)
+    {
+        Job::find($id)->delete();
+        return redirect()->back();
+    }
 }
