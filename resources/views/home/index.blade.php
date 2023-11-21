@@ -155,7 +155,7 @@
 					<div class="col-lg-12">
 						<div class="heading light">
 							<h2>Tiên phong trong nền tảng tìm kiếm việc làm</h2>
-							<span>JobHunt có những tính năng nào?</span>
+							<span>YTJob có những tính năng nào?</span>
 						</div><!-- Heading -->
 						<div class="reviews-sec" id="reviews-carousel">
 							<div class="col-lg-6">

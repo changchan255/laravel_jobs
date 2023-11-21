@@ -19,7 +19,7 @@
 					</div>
 					<div class="col-lg-4 column">
 						<div class="widget">
-							<h3 class="footer-title">Về JobHunt</h3>
+							<h3 class="footer-title">Về YTJob</h3>
 							<div class="link_widgets">
 								<div class="row">
 									<div class="col-lg-6">

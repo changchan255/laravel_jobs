@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="{{ asset('assets/loginadmin/css/style.css') }}">
 
 </head>
-<body class="img js-fullheight" style="background-image: url({{ asset('assets/loginadmin/images/bg.jpg') }});">
+<body class="img js-fullheight" style="background-image: url({{ asset('assets/loginadmin/images/bg.jpg') }}); width: 100vw;
+  height: 100vh">
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center">

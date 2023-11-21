@@ -128,7 +128,7 @@
     <div class="menu-sec">
         <div class="container">
             <div class="logo">
-                <a href="{{ route('get.home') }}" title=""><img class="hidesticky" src="{{asset('assets/jobboard/images/resource/logo.png') }}" alt="" /><img class="showsticky" src="{{asset('assets/jobboard/images/resource/logo10.png') }}" alt="" /></a>
+                <a href="{{ route('get.home') }}" title=""><img class="hidesticky" src="{{asset('assets/jobboard/images/resource/logo.png') }}" alt style="width: 160px" /><img class="showsticky" src="{{asset('assets/jobboard/images/resource/logo1.png') }}" alt style="width: 225px;height: 50px;" /></a>
             </div><!-- Logo -->
 
             @if(get_data_user('users'))
