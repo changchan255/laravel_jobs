@@ -55,6 +55,16 @@ class Job extends Model
         return $this->belongsTo(Attribute::class, 'j_form_of_work_id');
     }
 
+    public function getRank()
+    {
+        return $this->belongsTo(Attribute::class, 'j_rank_id');
+    }
+
+    public function getExp()
+    {
+        return $this->belongsTo(Attribute::class, 'j_experience_id');
+    }
+
     public function company()  //tra ve ten cong ty trong muc job.index
     {
         return $this->belongsTo(Company::class, 'j_company_id');

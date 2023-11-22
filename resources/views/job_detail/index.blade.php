@@ -33,8 +33,13 @@
                                                 <h3>{{ $job->j_name }}</h3>
                                                 <span><i class="la la-map-marker"></i>{{ $job->j_address }}</span><span class="job-is ft" style="padding: 10px 10px">{{ $job->getAttributeJob->a_name ?? "[N/A]" }}</span>
                                                 <ul class="tags-jobs">
+                                                    <li><i class="la la-user"></i> Chức vụ: {{ $job->getRank->a_name ?? "[N/A]" }}</li>
+                                                    <li><i class="la la-suitcase"></i> Kinh nghiệm: {{ $job->getExp->a_name ?? "[N/A]" }}</li>
+                                                    <li><i class="la la-money"></i>Mức lương: {{ $job->j_salary ?? "[N/A]" }}</li>
+                                                </ul>
+                                                <ul class="tags-jobs">
 {{--                                                    <li><i class="la la-file-text"></i> Applications 1</li>--}}
-                                                    <li><i class="la la-calendar-o"></i> Deadline: {{ $job->j_time }}</li>
+                                                    <li><i class="la la-calendar-o"></i> Hạn nộp hồ sơ: {{ $job->j_time }}</li>
 {{--                                                    <li><i class="la la-eye"></i>Lượt xem: {{ $job->j_view }}</li>--}}
                                                 </ul>
                                             </div>
