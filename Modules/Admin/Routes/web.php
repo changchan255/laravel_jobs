@@ -25,6 +25,10 @@ Route::prefix('admin')->middleware('checkLoginAdmin')->group(function() {
     });
     Route::prefix('attribute')->group(function () {
         Route::get('/', 'AdminAttributeController@index')->name('get_admin.attribute.index');
+        Route::get('create', 'AdminAttributeController@create')->name('get_admin.attribute.create');
+        Route::post('create', 'AdminAttributeController@store');
+
+        Route::get('delete/{id}', 'AdminAttributeController@delete')->name('get_admin.attribute.delete');
     });
     Route::prefix('job')->group(function () {
         Route::get('/', 'AdminJobController@index')->name('get_admin.job.index');

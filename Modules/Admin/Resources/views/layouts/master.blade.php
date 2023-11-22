@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Admin System - Website tuyển dụng JobHunt</title>
+    <title>Admin System - Website tuyển dụng YTJob</title>
     <meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/jobboard/images/favicon.png') }}"/>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -31,16 +32,16 @@
                     </a>
                 </nav>
             </div>
-            <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
-                <div class="input-group input-group-seamless ml-3">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <i class="fas fa-search"></i>
-                        </div>
-                    </div>
-                    <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search">
-                </div>
-            </form>
+{{--            <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">--}}
+{{--                <div class="input-group input-group-seamless ml-3">--}}
+{{--                    <div class="input-group-prepend">--}}
+{{--                        <div class="input-group-text">--}}
+{{--                            <i class="fas fa-search"></i>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search">--}}
+{{--                </div>--}}
+{{--            </form>--}}
             <div class="nav-wrapper">
                 <ul class="nav flex-column">
                     @foreach(config('sidebar_admin') as $item)
@@ -113,15 +114,15 @@
                                 <span class="d-none d-md-inline-block">{{ get_data_user('admins','name') }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-small">
-                                <a class="dropdown-item" href="user-profile-lite.html">
-                                    <i class="material-icons">&#xE7FD;</i> Profile</a>
-                                <a class="dropdown-item" href="components-blog-posts.html">
-                                    <i class="material-icons">vertical_split</i> Blog Posts</a>
-                                <a class="dropdown-item" href="add-new-post.html">
-                                    <i class="material-icons">note_add</i> Add New Post</a>
+{{--                                <a class="dropdown-item" href="user-profile-lite.html">--}}
+{{--                                    <i class="material-icons">&#xE7FD;</i> Profile</a>--}}
+{{--                                <a class="dropdown-item" href="components-blog-posts.html">--}}
+{{--                                    <i class="material-icons">vertical_split</i> Blog Posts</a>--}}
+{{--                                <a class="dropdown-item" href="add-new-post.html">--}}
+{{--                                    <i class="material-icons">note_add</i> Add New Post</a>--}}
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-danger" href="{{ route('get.admin_logout') }}">
-                                    <i class="material-icons text-danger">&#xE879;</i> Logout </a>
+                                    <i class="material-icons text-danger">&#xE879;</i> Đăng xuất </a>
                             </div>
                         </li>
                     </ul>

@@ -24,7 +24,9 @@ class EmployerJobController extends Controller
             ->orderByDesc('id')
             ->paginate(10);
 
-        $jobActive = Job::where('j_status', Job::STATUS_SUCCESS)->select('id')->count();
+        $jobActive = Job::where('j_status', Job::STATUS_SUCCESS)
+            ->where('j_employer_id', get_data_user('users'))
+            ->count();
 
         $applyJobCount = ApplyJob::where('aj_employer_id', get_data_user('users'))->select('id')->count();
 

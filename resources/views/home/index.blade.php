@@ -28,6 +28,7 @@
 												<div class="job-field">
 													<select data-placeholder="Chọn địa điểm"
                                                             class="chosen-city" name="l">
+                                                        <option> </option>
 														<option>Hà Nội </option>
                                                         <option>Quảng Ninh</option>
                                                         <option>Bắc Ninh</option>
