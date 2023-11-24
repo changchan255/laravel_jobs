@@ -7,8 +7,8 @@
  </p>
 
 ## Link
-[Link demo](https://drive.google.com/file/d/1u_hVPp_DqwAIIXfx9d7vFJQK0rvNMncr/view?usp=sharing)
-[Link canva](https://www.canva.com/design/DAF0zg7GSXU/2rJDE_qa601TgmABgN9yDw/edit?utm_content=DAF0zg7GSXU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- **[Link demo](https://drive.google.com/file/d/1u_hVPp_DqwAIIXfx9d7vFJQK0rvNMncr/view?usp=sharing)**
+- **[Link canva](https://www.canva.com/design/DAF0zg7GSXU/2rJDE_qa601TgmABgN9yDw/edit?utm_content=DAF0zg7GSXU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)**
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
