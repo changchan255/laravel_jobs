@@ -28,6 +28,8 @@ class JobController extends Controller
             ->Limit(10)
             ->get();
 
+        $job->increment('j_view');
+
         $viewData = [
             'job' => $job,
             'hashIDJob' => $id,

@@ -40,7 +40,7 @@
                                                 <ul class="tags-jobs">
 {{--                                                    <li><i class="la la-file-text"></i> Applications 1</li>--}}
                                                     <li><i class="la la-calendar-o"></i> Hạn nộp hồ sơ: {{ $job->j_time }}</li>
-{{--                                                    <li><i class="la la-eye"></i>Lượt xem: {{ $job->j_view }}</li>--}}
+                                                    <li><i class="la la-eye"></i>Lượt xem: {{ $job->j_view }}</li>
                                                 </ul>
                                             </div>
                                         </div>
