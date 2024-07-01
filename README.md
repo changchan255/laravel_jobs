@@ -2,6 +2,7 @@
       YTJOB WEBSITE 
 
 </h1>
+
 # Introduction
 A web-based application designed for recruitment purposes. It allows users to post job openings, apply for jobs, and manage the recruitment process efficiently.
 </h1>
@@ -13,12 +14,12 @@ A web-based application designed for recruitment purposes. It allows users to po
 * And many more others...
 
 # Technologies Used
-Backend: Laravel (PHP)
-Frontend: HTML, CSS, JavaScript
-Database: MySQL
+* Backend: Laravel (PHP)
+* Frontend: HTML, CSS, JavaScript
+* Database: MySQL
 
 # Installation
-1. Clone the repository: git clone []
+1. Clone the repository: git clone https://github.com/changchan255/laravel_jobs.git
 2. Navigate to the project directory: cd \laravel_jobs
 3. Install dependencies: composer install
 4. Set up database configuration in .env file
